@@ -1,0 +1,27 @@
+.small-card {
+  background-color: #282828;
+  border-radius: 5px;
+  width: 337px;
+}
+
+.small-card img {
+  width: 80px;
+  height: 80px;
+  margin-right: 17px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.small-card-info {
+  display: flex;
+  width: 337px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.small-card-title {
+  color: white;
+  font-weight: bold;
+  margin-top: 35px;
+  border-radius: 5px;
+}

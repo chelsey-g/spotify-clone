@@ -14,15 +14,31 @@ export default function MainLayout() {
     });
 
     getUserTopArtists().then((res) => {
-      console.log(res);
+      console.log("TopArtists", res.items);
       setArtists(res.items);
     });
   }, []);
 
   return (
     <div>
-      <SavedTracks tracks={tracks} name="Chelsey" />;
-      <TopArtists artists={artists} />;
+      <div id="main">
+        fdgfdgdf
+        <div id="left">
+          <ul>
+            <li>Home</li>
+            <li>Search</li>
+            <li>Your Library</li>
+          </ul>
+          <hr />
+          <div>Playlist #1</div>
+        </div>
+        <div>Center</div>
+        <div id="activity">
+          Friend Activity
+          <img src="https://via.placeholder.com/150" alt="placeholder" />
+        </div>
+      </div>
+      <div id="stickyFooter">Player</div>
     </div>
   );
 }

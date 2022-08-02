@@ -1,0 +1,138 @@
+/* body {
+  border: 1px solid blue;
+} */
+
+.album-info {
+  display: flex;
+  background-color: #894b45;
+
+  width: 1495px;
+  flex-wrap: wrap;
+  color: white;
+  text-decoration: bold;
+}
+
+.album-image {
+  padding-left: 32px;
+  padding-right: 27px;
+}
+
+.album-text {
+  font-weight: 700;
+  font-size: 0.75rem;
+  align-items: flex-end;
+  text-transform: uppercase;
+}
+
+.album-text h1 {
+  text-transform: none;
+  font-size: 3rem;
+}
+.artist-album-info {
+  font-size: 0.875rem;
+}
+
+.album-header {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  padding-bottom: 24px;
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+.artist-name {
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.album-time-total {
+  color: hsla(0, 0%, 100%, 0.7);
+  text-transform: none;
+}
+
+.album-year,
+.track-total {
+  font-weight: none;
+  text-transform: none;
+}
+
+.album-content {
+  background-color: black;
+}
+
+.album-buttons {
+  background-image: linear-gradient(#894b45, #000000);
+  padding: 24px;
+  flex-direction: column;
+}
+
+.play-button {
+  margin-right: 20px;
+}
+
+.like-button {
+  margin-right: 20px;
+}
+
+.album-options {
+  width: 1495px;
+}
+
+.tracks-list {
+  /* border: 6px solid red; */
+}
+
+.track-number {
+  padding-left: 13px;
+}
+
+.tracks-header {
+  margin: 0 20px 16px 40px;
+  padding: 8px 16px;
+  color: #b3b3b3;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 66px 1222px 16px;
+}
+
+.album-tracks-info {
+  display: grid;
+  list-style: none;
+  grid-template-columns: 36px 1230px 38px;
+  align-items: center;
+  text-align: left;
+  padding: 0 16px;
+  grid-column-gap: 20px;
+  column-gap: 16px;
+}
+
+.album-track-name {
+  display: grid;
+  background: none;
+  /* border: 5px solid yellow; */
+  border-radius: 4px;
+  color: #fff;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  width: 200px;
+}
+
+.album-track-name span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.album-tracks-number,
+.album-tracks-title,
+.album-tracks-duration {
+  border-bottom: 2px solid white;
+}
+
+.album-cr {
+  display: flex;
+  margin-top: 32px;
+}

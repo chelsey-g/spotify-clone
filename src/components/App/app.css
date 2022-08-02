@@ -1,0 +1,23 @@
+body {
+  color: white;
+  background-color: black;
+}
+
+#main {
+  display: flex;
+  height: 100vh;
+}
+
+#left {
+  width: 300px;
+  border: 1px solid red;
+}
+
+#left li {
+  margin: 15px;
+}
+
+#activity {
+  width: 300px;
+  border: 1px solid red;
+}
