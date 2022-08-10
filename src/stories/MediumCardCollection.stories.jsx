@@ -33,5 +33,17 @@ Primary.args = {
         "https://i.scdn.co/image/ab6761610000e5eb4d709a7f0c971c81aeeb6e75",
       artists: ["Goose", "Bruce Springsteen", "Billy Joel", "and..."],
     },
+    {
+      name: "90's Playlist",
+      coverUrl:
+        "https://i.scdn.co/image/84282c28d851a700132356381fcfbadc67ff498b",
+      artists: ['The Lumineers", "The Notorious B.I.G.", "and..."],'],
+    },
+    {
+      name: "Grunge Playlist",
+      coverUrl:
+        "https://i.scdn.co/image/84282c28d851a700132356381fcfbadc67ff498b",
+      artists: ['The Lumineers", "The Notorious B.I.G.", "and..."],'],
+    },
   ],
 };

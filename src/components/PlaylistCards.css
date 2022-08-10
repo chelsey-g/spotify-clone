@@ -2,7 +2,6 @@ body {
 }
 .main-header {
   width: 1495px;
-  background-color: #894b45;
 }
 
 .section-header {
@@ -19,10 +18,6 @@ body {
   padding-left: 25px;
   margin-right: 15px;
   padding-right: 20px;
-}
-
-.user-menu-button {
-  padding-right: 15px;
 }
 
 .button-highlighted {

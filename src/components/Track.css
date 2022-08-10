@@ -1,0 +1,113 @@
+.album-tracks-info {
+  display: grid;
+  grid-template-columns: 36px 1200px 38px 50px;
+  align-items: center;
+  padding: 0 16px;
+  grid-column-gap: 20px;
+  column-gap: 16px;
+}
+.track-button {
+  opacity: 100%;
+}
+
+.track-button:hover {
+  opacity: 100%;
+}
+
+.album-track-name {
+  display: grid;
+  background: none;
+  /* border: 5px solid yellow; */
+  border-radius: 4px;
+  color: #fff;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  width: 200px;
+}
+
+.album-track-name span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.album-tracks-number,
+.album-tracks-title,
+.album-tracks-duration {
+  border-bottom: 2px solid white;
+  color: #b3b3b3;
+}
+
+.album-track-menu {
+  height: 10px;
+}
+
+.album-track-menu-content {
+  color: white;
+  position: relative;
+  right: 205px;
+  width: 220px;
+}
+
+.track-arrow-nav {
+  position: relative;
+}
+
+.track-arrow-nav .track-nav-cont {
+  position: absolute;
+  right: 220px;
+  width: 300px;
+  display: none;
+  top: 0px;
+}
+
+.track-arrow-nav:hover .track-nav-cont {
+  display: block;
+}
+
+.track-menu {
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #282828;
+}
+
+.track-menu a {
+  display: block;
+  padding: 17px;
+}
+
+.track-menu a:hover {
+  background-color: #575757;
+}
+
+.track-share-arrow-nav {
+  position: relative;
+}
+
+.track-share-arrow-nav .track-share-arrow-nav-cont {
+  position: absolute;
+  right: 220px;
+  width: 300px;
+  display: none;
+  top: 0px;
+}
+
+.track-share-arrow-nav:hover .track-share-arrow-nav-cont {
+  display: block;
+}
+
+.track-menu-share {
+  background-color: #282828;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.track-menu-share a {
+  display: none;
+  padding: 20px;
+}
+
+.track-menu-share a:hover {
+  background-color: #575757;
+}

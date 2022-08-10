@@ -1,4 +1,4 @@
-import PlayButton from "./PlayButton";
+import { PlayArrowOutlined } from "@material-ui/icons";
 
 export default function TopArtists({ artists }) {
   return (
@@ -10,7 +10,7 @@ export default function TopArtists({ artists }) {
             <li>
               {artist.name}
               <img src={artist.images[2].url}></img>
-              <PlayButton />
+              <PlayArrowOutlined />
             </li>
           );
         })}

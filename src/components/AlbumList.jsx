@@ -1,72 +1,19 @@
 import "./AlbumList.css";
-import PlayButton from "./PlayButton";
-import LikeButton from "./LikeButton";
-import MenuButton from "./MenuButton";
-import DurationButton from "./DurationButton";
+import Track from "./Track";
+import { useState } from "react";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsThreeDots } from "react-icons/bs";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { RiArrowRightSFill } from "react-icons/ri";
+import MenuNav from "./MenuNav";
 
-export default function AlbumList({ coverUrl, name, artists, trackList }) {
-  let tracks = [
-    {
-      name: "Serve The Servants",
-      artist: "Nirvana",
-      number: "1",
-    },
-    {
-      name: "Scentless Apprentice",
-      artist: "Nirvana",
-      number: "2",
-    },
-    {
-      name: "Heart-shaped Box",
-      artist: "Nirvana",
-      number: "3",
-    },
-    {
-      name: "Rape Me",
-      artist: "Nirvana",
-      number: "4",
-    },
-    {
-      name: "Serve The Servants",
-      artist: "Nirvana",
-      number: "5",
-    },
-    {
-      name: "Scentless Apprentice",
-      artist: "Nirvana",
-      number: "6",
-    },
-    {
-      name: "Heart-shaped Box",
-      artist: "Nirvana",
-      number: "7",
-    },
-    {
-      name: "Rape Me",
-      artist: "Nirvana",
-      number: "8",
-    },
-    {
-      name: "Serve The Servants",
-      artist: "Nirvana",
-      number: "9",
-    },
-    {
-      name: "Scentless Apprentice",
-      artist: "Nirvana",
-      number: "10",
-    },
-    {
-      name: "Heart-shaped Box",
-      artist: "Nirvana",
-      number: "11",
-    },
-    {
-      name: "Rape Me",
-      artist: "Nirvana",
-      number: "12",
-    },
-  ];
+export default function AlbumList(props) {
+  const [hidden, setHidden] = useState(true);
+
+  const handleClick = () => {
+    setHidden(!hidden);
+  };
 
   return (
     <div className="album-info">
@@ -90,15 +37,13 @@ export default function AlbumList({ coverUrl, name, artists, trackList }) {
       <div className="album-content">
         <div className="album-options">
           <div className="album-buttons">
-            <span className="play-button">
-              <PlayButton />
+            <span className="album-list-btn">
+              <AiFillPlayCircle color="#1DB954" size={50} />
             </span>
-            <span className="like-button">
-              <LikeButton />
+            <span className="album-list-btn">
+              <AiOutlineHeart size={50} />
             </span>
-            <span className="menu-button">
-              <MenuButton />
-            </span>
+            <MenuNav className="album-list-btn" />
           </div>
         </div>
 
@@ -107,23 +52,16 @@ export default function AlbumList({ coverUrl, name, artists, trackList }) {
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
             <div className="track-duration">
-              <DurationButton />
+              <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
 
             <div className="album-tracks">
-              {tracks.map((track) => (
-                <div className="album-tracks-info">
-                  <div className="album-track-number">{track.number}</div>
-                  <div className="album-track-name">
-                    {track.name}
-                    <span className="album-track-artist">{track.artist}</span>
-                  </div>
-                  <div className="album-track-duration">3:27</div>
-                </div>
+              {props.tracks.map((item) => (
+                <Track data={item} key={item.number} />
               ))}
             </div>
           </div>
-          <div class="album-cr">© 2013 Geffen Records</div>
+          <div className="album-cr">© 2013 Geffen Records</div>
         </div>
       </div>
     </div>

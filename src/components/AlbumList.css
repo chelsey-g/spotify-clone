@@ -65,23 +65,30 @@
 .album-buttons {
   background-image: linear-gradient(#894b45, #000000);
   padding: 24px;
-  flex-direction: column;
+  display: flex;
 }
 
-.play-button {
-  margin-right: 20px;
+.album-list-btn {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.like-button {
-  margin-right: 20px;
-}
+/* .album-menu-content {
+  background-color: #282828;
+  border-radius: 4px;
+  width: 160px;
+  height: 205px;
+  position: fixed;
+  z-index: 9999;
+  left: 184px;
+  padding-left: 20px;
+  padding-top: 17px;
+  font-size: 14px;
+  display: grid;
+} */
 
 .album-options {
   width: 1495px;
-}
-
-.tracks-list {
-  /* border: 6px solid red; */
 }
 
 .track-number {
@@ -94,45 +101,31 @@
   color: #b3b3b3;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: 66px 1222px 16px;
-}
-
-.album-tracks-info {
-  display: grid;
-  list-style: none;
-  grid-template-columns: 36px 1230px 38px;
-  align-items: center;
-  text-align: left;
-  padding: 0 16px;
-  grid-column-gap: 20px;
-  column-gap: 16px;
-}
-
-.album-track-name {
-  display: grid;
-  background: none;
-  /* border: 5px solid yellow; */
-  border-radius: 4px;
-  color: #fff;
-  align-items: center;
-  padding: 0 16px;
-  height: 56px;
-  width: 200px;
-}
-
-.album-track-name span {
-  font-weight: 400;
-  font-size: 14px;
-  color: #b3b3b3;
-}
-
-.album-tracks-number,
-.album-tracks-title,
-.album-tracks-duration {
-  border-bottom: 2px solid white;
+  grid-template-columns: 66px 1193px 16px;
 }
 
 .album-cr {
   display: flex;
   margin-top: 32px;
 }
+
+/* .playlist-arrow {
+  padding-left: 5px;
+}
+
+.playlist-arrow-nav-cont {
+  border-radius: 4px;
+  background-color: #282828;
+  width: 258px;
+  height: 565px;
+  padding: 17px;
+  position: fixed;
+  z-index: 9999;
+  left: 364px;
+  bottom: -220px;
+}
+
+.playlist-arrow-nav:hover {
+  border-radius: 4px;
+  background: hsla(0, 0%, 100%, 0.1);
+} */

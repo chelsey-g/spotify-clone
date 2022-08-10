@@ -1,0 +1,72 @@
+.album-menu-content {
+  position: absolute;
+  z-index: 9999;
+}
+
+.album-list-btn {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.playlist-arrow-nav {
+  position: relative;
+}
+
+.playlist-arrow-nav .playlist-arrow-nav-cont {
+  display: none;
+  position: absolute;
+  left: 178px;
+  width: 300px;
+  top: 0px;
+}
+
+.playlist-arrow-nav:hover .playlist-arrow-nav-cont {
+  display: block;
+}
+
+.menu {
+  background-color: #282828;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.menu a {
+  display: block;
+  padding: 20px;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+.share-arrow-nav {
+  position: relative;
+}
+
+.share-arrow-nav .share-arrow-nav-cont {
+  display: none;
+  position: absolute;
+  left: 178px;
+  width: 300px;
+  top: 0px;
+}
+
+.share-arrow-nav:hover .share-arrow-nav-cont {
+  display: block;
+}
+
+.share-menu {
+  background-color: #282828;
+  border-radius: 4px;
+  font-size: 14px;
+  display: none;
+}
+
+.share-menu a {
+  display: block;
+  padding: 20px;
+}
+
+.share-menu a:hover {
+  background-color: #575757;
+}

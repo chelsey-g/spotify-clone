@@ -27,13 +27,21 @@ Primary.args = {
         "https://i.scdn.co/image/207803ce008388d3427a685254f9de6a8f61dc2e",
       artists: ["Bush", "The Smashing Pumpkins", "No Doubt", "and..."],
     },
+
     {
       name: "Drive Playlist",
       coverUrl:
         "https://i.scdn.co/image/ab6761610000e5eb4d709a7f0c971c81aeeb6e75",
       artists: ["Goose", "Bruce Springsteen", "Billy Joel", "and..."],
     },
+    {
+      name: "90's Playlist",
+      coverUrl:
+        "https://i.scdn.co/image/84282c28d851a700132356381fcfbadc67ff498b",
+      artists: ["Goose", "Bruce Springsteen", "Billy Joel", "and..."],
+    },
   ],
+
   forYouPlaylist: [
     {
       name: "Vanilly Ice",

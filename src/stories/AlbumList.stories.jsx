@@ -33,4 +33,78 @@ Primary.args = {
       artists: ["Goose", "Bruce Springsteen", "Billy Joel", "and..."],
     },
   ],
+  tracks: [
+    {
+      name: "Serve The Servants",
+      artist: "Nirvana",
+      number: "1",
+      duration: "3:00",
+    },
+    {
+      name: "Scentless Apprentice",
+      artist: "Nirvana",
+      number: "2",
+      duration: "2:23",
+    },
+    {
+      name: "Heart-shaped Box",
+      artist: "Nirvana",
+      number: "3",
+      duration: "2:23",
+    },
+    {
+      name: "Rape Me",
+      artist: "Nirvana",
+      number: "4",
+      duration: "2:23",
+    },
+    {
+      name: "Serve The Servants",
+      artist: "Nirvana",
+      number: "5",
+      duration: "2:23",
+    },
+    {
+      name: "Scentless Apprentice",
+      artist: "Nirvana",
+      number: "6",
+      duration: "2:23",
+    },
+    {
+      name: "Heart-shaped Box",
+      artist: "Nirvana",
+      number: "7",
+      duration: "2:23",
+    },
+    {
+      name: "Rape Me",
+      artist: "Nirvana",
+      number: "8",
+      duration: "2:23",
+    },
+    {
+      name: "Serve The Servants",
+      artist: "Nirvana",
+      number: "9",
+      duration: "2:23",
+    },
+    {
+      name: "Scentless Apprentice",
+      artist: "Nirvana",
+      number: "10",
+      duration: "2:23",
+    },
+    {
+      name: "Heart-shaped Box",
+      artist: "Nirvana",
+      number: "11",
+      duration: "2:23",
+    },
+    {
+      name: "Rape Me",
+      artist: "Nirvana",
+      number: "12",
+      duration: "2:23",
+    },
+  ],
 };
