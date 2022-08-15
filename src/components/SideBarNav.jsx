@@ -44,11 +44,11 @@ export default function SideBarNav({ playlists }) {
         ))}
       </nav>
 
-      <div className="footer-nav">
+      {/* <div className="footer-nav">
         <img className="footer-album-cover" alt="footer art"></img>
-        {/* <div className="footer-album-info">Nirvana, In Utero</div> */}
+        <div className="footer-album-info">Nirvana, In Utero</div>
         <span classname="heart-react-icon"></span>
-      </div>
+      </div> */}
     </div>
   );
 }
