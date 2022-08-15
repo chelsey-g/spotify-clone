@@ -15,22 +15,22 @@ export default function SideBarNav({ playlists }) {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
       />
       <nav className="side-bar-nav-cont">
-        <a>
+        <a href="#">
           <MdHomeFilled className="nav-icon" />
           <div>Home</div>
         </a>
-        <a>
+        <a href="#">
           <AiOutlineSearch className="nav-icon" /> Search
         </a>
-        <a>
+        <a href="#">
           <BiLibrary className="nav-icon" /> Your Library
         </a>
       </nav>
       <nav className="side-bar-nav-cont">
-        <a>
+        <a href="#">
           <AiOutlinePlusSquare className="nav-icon" /> Create Playlist
         </a>
-        <a>
+        <a href="#">
           <AiOutlineHeart className="nav-icon" /> Liked Songs
         </a>
       </nav>
@@ -45,7 +45,7 @@ export default function SideBarNav({ playlists }) {
       </nav>
 
       <div className="footer-nav">
-        <img className="footer-album-cover"></img>
+        <img className="footer-album-cover" alt="footer art"></img>
         {/* <div className="footer-album-info">Nirvana, In Utero</div> */}
         <span classname="heart-react-icon"></span>
       </div>

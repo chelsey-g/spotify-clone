@@ -14,7 +14,7 @@ export default function UserMenuButton(props) {
   return (
     <div className="user-menu-button-cont">
       <div className="user-menu-image" onClick={handleClick}>
-        <img src="https://tinyurl.com/mvkkvyd2" alt="user image" />
+        <img src="https://tinyurl.com/mvkkvyd2" alt="user art" />
         Chelsey Gowac
         {/* {hidden && <IoMdArrowDropdown />}
         {!hidden && <IoMdArrowDropup />} */}

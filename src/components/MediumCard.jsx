@@ -17,7 +17,7 @@ export default function MediumCard({ coverUrl, name, artists }) {
   return (
     <div className="medium-card">
       <div className="medium-card-header">
-        <img className="playlist-img" src={coverUrl} />
+        <img className="playlist-img" src={coverUrl} alt="playlist art" />
         <AiFillPlayCircle
           color="#1DB954"
           size={50}
