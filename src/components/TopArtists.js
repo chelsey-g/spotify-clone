@@ -1,5 +1,3 @@
-import { PlayArrowOutlined } from "@material-ui/icons";
-
 export default function TopArtists({ artists }) {
   return (
     <div>
@@ -10,7 +8,6 @@ export default function TopArtists({ artists }) {
             <li>
               {artist.name}
               <img src={artist.images[2].url}></img>
-              <PlayArrowOutlined />
             </li>
           );
         })}

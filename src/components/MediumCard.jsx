@@ -2,7 +2,6 @@ import "./MediumCard.css";
 import PropTypes from "prop-types";
 // import { useState } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
-import { PlayArrow } from "@material-ui/icons";
 
 export default function MediumCard({ coverUrl, name, artists }) {
   // const [otherClasses, setOtherClasses] = useState("");
