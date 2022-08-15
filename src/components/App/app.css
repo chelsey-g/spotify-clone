@@ -9,8 +9,7 @@ body {
 }
 
 #left {
-  width: 300px;
-  border: 1px solid red;
+  min-width: 300px;
 }
 
 #left li {
