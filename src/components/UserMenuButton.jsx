@@ -14,7 +14,7 @@ export default function UserMenuButton(props) {
   return (
     <div className="user-menu-button-cont">
       <div className="user-menu-image" onClick={handleClick}>
-        <img src="https://tinyurl.com/mvkkvyd2" />
+        <img src="https://tinyurl.com/mvkkvyd2" alt="user image" />
         Chelsey Gowac
         {/* {hidden && <IoMdArrowDropdown />}
         {!hidden && <IoMdArrowDropup />} */}
@@ -22,20 +22,20 @@ export default function UserMenuButton(props) {
       </div>
       {!hidden && (
         <nav className="user-menu-dropdown">
-          <a>
+          <a href="#">
             Account
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a>Profile</a>
-          <a>
+          <a href="#">Profile</a>
+          <a href="#">
             Support
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a>
+          <a href="#">
             Download
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a>Logout</a>
+          <a href="#">Logout</a>
         </nav>
       )}
     </div>

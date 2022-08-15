@@ -7,7 +7,7 @@ export default function TopArtists({ artists }) {
           return (
             <li>
               {artist.name}
-              <img src={artist.images[2].url}></img>
+              <img src={artist.images[2].url} alt="artist image"></img>
             </li>
           );
         })}
