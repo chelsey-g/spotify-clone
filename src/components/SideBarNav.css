@@ -3,8 +3,12 @@
   /* border: 1px solid blue; */
   color: #b3b3b3;
   height: 1000px;
+  min-width: 300px;
 }
 
+.side-bar-nav a:hover {
+  color: white;
+}
 .spotify-logo-sidebar {
   width: 131px;
   height: 40px;
@@ -15,9 +19,7 @@
 }
 
 .side-bar-nav-cont {
-  /* q */
   padding: 16px;
-  /* border: 1px solid green; */
 }
 
 .nav-icon {
@@ -29,6 +31,14 @@
   display: flex;
   align-items: center;
   height: 30px;
+  font-weight: bold;
+}
+
+.side-bar-nav-cont-2 a {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 24px;
 }
 
 .nav-line {

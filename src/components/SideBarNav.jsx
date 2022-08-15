@@ -38,7 +38,7 @@ export default function SideBarNav({ playlists }) {
       <div className="border-line">
         <hr className="nav-line" />
       </div>
-      <nav className="side-bar-nav-cont">
+      <nav className="side-bar-nav-cont-2">
         {playlists.map((playlist) => (
           <a className="nav-icon">{playlist}</a>
         ))}
