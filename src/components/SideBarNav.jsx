@@ -15,22 +15,22 @@ export default function SideBarNav({ playlists }) {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
       />
       <nav className="side-bar-nav-cont">
-        <a href="#">
+        <a>
           <MdHomeFilled className="nav-icon" />
           <div>Home</div>
         </a>
-        <a href="#">
+        <a>
           <AiOutlineSearch className="nav-icon" /> Search
         </a>
-        <a href="#">
+        <a>
           <BiLibrary className="nav-icon" /> Your Library
         </a>
       </nav>
       <nav className="side-bar-nav-cont">
-        <a href="#">
+        <a>
           <AiOutlinePlusSquare className="nav-icon" /> Create Playlist
         </a>
-        <a href="#">
+        <a>
           <AiOutlineHeart className="nav-icon" /> Liked Songs
         </a>
       </nav>

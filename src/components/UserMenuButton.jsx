@@ -22,20 +22,20 @@ export default function UserMenuButton(props) {
       </div>
       {!hidden && (
         <nav className="user-menu-dropdown">
-          <a href="#">
+          <a>
             Account
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a href="#">Profile</a>
-          <a href="#">
+          <a>Profile</a>
+          <a>
             Support
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a href="#">
+          <a>
             Download
             <MdOutlineOpenInNew size={16} className="new-window-nav" />
           </a>
-          <a href="#">Logout</a>
+          <a>Logout</a>
         </nav>
       )}
     </div>
