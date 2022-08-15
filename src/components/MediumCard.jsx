@@ -2,6 +2,7 @@ import "./MediumCard.css";
 import PropTypes from "prop-types";
 // import { useState } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export default function MediumCard({ coverUrl, name, artists }) {
   // const [otherClasses, setOtherClasses] = useState("");
@@ -15,18 +16,20 @@ export default function MediumCard({ coverUrl, name, artists }) {
   // };
 
   return (
-    <div className="medium-card">
-      <div className="medium-card-header">
-        <img className="playlist-img" src={coverUrl} alt="playlist art" />
-        <AiFillPlayCircle
-          color="#1DB954"
-          size={50}
-          className="play-btn"
-        ></AiFillPlayCircle>
+    <Link to="/albums/sdfsdfsfsf">
+      <div className="medium-card">
+        <div className="medium-card-header">
+          <img className="playlist-img" src={coverUrl} alt="playlist art" />
+          <AiFillPlayCircle
+            color="#1DB954"
+            size={50}
+            className="play-btn"
+          ></AiFillPlayCircle>
+        </div>
+        <div className="playlist-name">{name}</div>
+        <div className="card-artist">{artists.join()}</div>
       </div>
-      <div className="playlist-name">{name}</div>
-      <div className="card-artist">{artists.join()}</div>
-    </div>
+    </Link>
   );
 }
 

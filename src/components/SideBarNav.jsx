@@ -5,6 +5,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiLibrary } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function SideBarNav({ playlists }) {
   return (
@@ -17,7 +18,8 @@ export default function SideBarNav({ playlists }) {
       <nav className="side-bar-nav-cont">
         <a>
           <MdHomeFilled className="nav-icon" />
-          <div>Home</div>
+
+          <Link to="/">Home</Link>
         </a>
         <a>
           <AiOutlineSearch className="nav-icon" /> Search
