@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export default function MediumCard({ coverUrl, name, artists }) {
+export default function MediumCard({ id, coverUrl, name, artists }) {
   // const [otherClasses, setOtherClasses] = useState("");
 
   // const handleClick = () => {
@@ -16,7 +16,7 @@ export default function MediumCard({ coverUrl, name, artists }) {
   // };
 
   return (
-    <Link to="/albums/sdfsdfsfsf">
+    <Link to={`/albums/${id}`}>
       <div className="medium-card">
         <div className="medium-card-header">
           <img className="playlist-img" src={coverUrl} alt="playlist art" />

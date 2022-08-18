@@ -1,35 +1,76 @@
-import "./AlbumList.css";
-import Track from "./Track";
-import { useState } from "react";
-import { AiFillPlayCircle } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BsThreeDots } from "react-icons/bs";
-import { AiOutlineClockCircle } from "react-icons/ai";
-import { RiArrowRightSFill } from "react-icons/ri";
-import MenuNav from "./MenuNav";
+import { useEffect, useState } from "react"
+import { getAlbum, getAlbumTracks } from "../util/spotify"
+import "./AlbumList.css"
+import Track from "./Track"
+import { AiFillPlayCircle } from "react-icons/ai"
+import { AiOutlineHeart } from "react-icons/ai"
+import { BsThreeDots } from "react-icons/bs"
+import { AiOutlineClockCircle } from "react-icons/ai"
+import { RiArrowRightSFill } from "react-icons/ri"
+import MenuNav from "./MenuNav"
 
 export default function AlbumList(props) {
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(true)
+  const [album, setAlbum] = useState(null)
+  const [tracks, setTracks] = useState(null)
+
+  useEffect(() => {
+    getAlbum(props.album.id)
+      .then((data) => {
+        setAlbum(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [props.album.id])
+
+  useEffect(() => {
+    getAlbumTracks(props.album.id)
+      .then((data) => {
+        setTracks(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [props.album.id])
 
   const handleClick = () => {
-    setHidden(!hidden);
-  };
+    setHidden(!hidden)
+  }
+
+  if (!album || !tracks) {
+    return "Loading..."
+  }
+
+  // get year from abum release date
+  const year = album.release_date.split("-")[0]
+  const duration = album.tracks.items.reduce((acc, curr) => {
+    return acc + curr.duration_ms
+  }, 0)
+  const duration_ms = duration / 1000
+  const duration_min = Math.floor(duration_ms / 60)
+  const duration_sec = Math.floor(duration_ms % 60)
 
   return (
     <div className="album-info">
       <div className="album-header">
         <img
+          alt="cover art"
           className="album-image"
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/In_Utero_%28Nirvana%29_album_cover.jpg/220px-In_Utero_%28Nirvana%29_album_cover.jpg"
+          src={album.images[1].url}
         />
         <div className="album-text">
           <p>Album</p>
-          <h1>In Utero - 20th Anniversary Remastered</h1>
+          <h1>{album.name}</h1>
           <div className="artist-album-info">
-            <span className="artist-name">Nirvana • </span>
-            <span className="album-year">1993 • </span>
-            <span className="track-total">12 songs, </span>
-            <span className="album-time-total">41 min 27 sec</span>
+            <span className="artist-name">
+              {album.artists.map((artist) => artist.name).join(", ")} •{" "}
+            </span>
+            <span className="album-year">{year} • </span>
+            <span className="track-total">{album.total_tracks} songs, </span>
+            <span className="album-time-total">
+              {duration_min} min {duration_sec} sec
+            </span>
           </div>
         </div>
       </div>
@@ -65,5 +106,5 @@ export default function AlbumList(props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

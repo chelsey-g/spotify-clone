@@ -42,7 +42,7 @@ export default function SideBarNav({ playlists }) {
       </div>
       <nav className="side-bar-nav-cont-2">
         {playlists.map((playlist) => (
-          <a className="nav-icon">{playlist}</a>
+          <a className="nav-icon">{playlist.name}</a>
         ))}
       </nav>
 

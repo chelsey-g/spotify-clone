@@ -10,14 +10,21 @@ export default function Track(props) {
     setHidden(!hidden);
   };
 
+  let duration = props.data.duration_ms / 1000;
+  let duration_min = Math.floor(duration / 60);
+  let duration_sec = Math.floor(duration % 60);
+  duration_min = duration_min < 10 ? "0" + duration_min : duration_min;
+  duration_sec = duration_sec < 10 ? "0" + duration_sec : duration_sec;
+  duration = duration_min + ":" + duration_sec;
+
   return (
     <div className="album-tracks-info">
-      <div className="album-track-number">{props.data.number}</div>
+      <div className="album-track-number">{props.data.track_number}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
       </div>
-      <div className="album-track-duration">{props.data.duration} </div>
+      <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
         {!hidden && (
