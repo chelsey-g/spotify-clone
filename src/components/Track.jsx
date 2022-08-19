@@ -2,12 +2,17 @@ import "./Track.css";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { RiArrowRightSFill } from "react-icons/ri";
+import { startPlayback } from "../util/spotify";
 
 export default function Track(props) {
   const [hidden, setHidden] = useState(true);
 
   const handleClick = () => {
     setHidden(!hidden);
+  };
+
+  const play = (uri) => {
+    startPlayback(uri);
   };
 
   let duration = props.data.duration_ms / 1000;
@@ -18,7 +23,7 @@ export default function Track(props) {
   duration = duration_min + ":" + duration_sec;
 
   return (
-    <div className="album-tracks-info">
+    <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       <div className="album-track-number">{props.data.track_number}</div>
       <div className="album-track-name">
         {props.data.name}

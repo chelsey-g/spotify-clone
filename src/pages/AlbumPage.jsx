@@ -1,37 +1,36 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getAlbum, getAlbumTracks } from "../util/spotify"
-import AlbumList from "../components/AlbumList"
+import AlbumView from "../components/AlbumView"
 
 export default function AlbumPage(props) {
-  let params = useParams()
-  const albumId = params.id
-  const [album, setAlbum] = useState(albumId)
+  const { id } = useParams()
+  const [album, setAlbum] = useState()
   const [tracks, setTracks] = useState([])
 
   useEffect(() => {
-    getAlbum(albumId)
+    getAlbum(id)
       .then((data) => {
         setAlbum(data)
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [albumId])
+  }, [id])
 
   useEffect(() => {
-    getAlbumTracks(albumId)
+    getAlbumTracks(id)
       .then((data) => {
         setTracks(data.items)
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [albumId])
+  }, [id])
 
   if (!album || !tracks) {
     return "Loading..."
   }
 
-  return <AlbumList album={album} tracks={tracks} />
+  return <AlbumView album={album} tracks={tracks} />
 }

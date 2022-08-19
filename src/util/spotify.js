@@ -1,13 +1,19 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-const CLIENT_ID = "552224aa73d341988e49f4cdb6c6b45e";
+const CLIENT_ID = "552224aa73d341988e49f4cdb6c6b45e"
 // const CLIENT_ID = "bea8ca08bfa04f209a891fb011576542";
 const REDIRECT_URI = "http://localhost:3000"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 
 export function Login() {
-  let scopes = ["user-top-read", "user-library-read", "playlist-read-private"]
+  let scopes = [
+    "user-top-read",
+    "user-library-read",
+    "playlist-read-private",
+    "user-modify-playback-state",
+    "user-read-playback-state",
+  ]
   return (
     <a
       href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scopes.join(
@@ -30,6 +36,7 @@ export function Logout() {
  * Checks to see if Spotify has redirected here after authenticating
  */
 export function useSpotify() {
+  let [token, setToken] = useState(null)
   useEffect(() => {
     const hash = window.location.hash
     if (hash) {
@@ -40,33 +47,45 @@ export function useSpotify() {
         .split("=")[1]
 
       if (tok) {
-        console.log({tok})
+        console.log({ tok })
         window.localStorage.setItem("token", tok)
       }
 
       window.location.hash = ""
     }
+    request("https://api.spotify.com/v1/me").then((data) => {
+      setToken(true)
+    })
   }, [])
+  return token
 }
 
 function request(url, options = {}) {
   let token = window.localStorage.getItem("token")
   Object.assign(options, {
-    method: "GET",
+    method: options?.method || "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
-    },
+    }
   })
+  if (options.method !== "GET") {
+    Object.assign(options, { body: JSON.stringify(options.body) })
+  }
+  console.log('request', url, options)
   return fetch(url, options)
     .then(handleErrors)
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.headers.has("Content-Type")) {
+        return res.json()
+      }
+    })
 }
 
 function handleErrors(response) {
-  if (!response.ok) {
-    // window.localStorage.removeItem("token")
+  if (response.status === 401) {
+    window.localStorage.removeItem("token")
     throw Error(response.statusText)
   }
   return response
@@ -94,4 +113,25 @@ export function getAlbum(id) {
 
 export function getAlbumTracks(id) {
   return request(`https://api.spotify.com/v1/albums/${id}/tracks`)
+}
+
+export function getAvailableDevices() {
+  return request("https://api.spotify.com/v1/me/player/devices")
+}
+
+export async function startPlayback(uri, deviceId = null) {
+  if (!deviceId) {
+    let res = await getAvailableDevices();
+    // console.log(res);
+    deviceId = res.devices.find(d => d.name.includes('MacBook')).id;
+  }
+  return request(
+    `https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`,
+    {
+      method: "PUT",
+      body: {
+        uris: [uri]
+      }
+    }
+  )
 }

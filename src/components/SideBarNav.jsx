@@ -1,11 +1,11 @@
-import React from "react";
-import "./SideBarNav.css";
-import { MdHomeFilled } from "react-icons/md";
-import { AiOutlineSearch } from "react-icons/ai";
-import { AiOutlinePlusSquare } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BiLibrary } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import React from "react"
+import "./SideBarNav.css"
+import { MdHomeFilled } from "react-icons/md"
+import { AiOutlineSearch } from "react-icons/ai"
+import { AiOutlinePlusSquare } from "react-icons/ai"
+import { AiOutlineHeart } from "react-icons/ai"
+import { BiLibrary } from "react-icons/bi"
+import { Link } from "react-router-dom"
 
 export default function SideBarNav({ playlists }) {
   return (
@@ -16,34 +16,45 @@ export default function SideBarNav({ playlists }) {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
       />
       <nav className="side-bar-nav-cont">
-        <a>
-          <MdHomeFilled className="nav-icon" />
+        <ol>
+          <li>
+            <MdHomeFilled className="nav-icon" />
 
-          <Link to="/">Home</Link>
-        </a>
-        <a>
-          <AiOutlineSearch className="nav-icon" /> Search
-        </a>
-        <a>
-          <BiLibrary className="nav-icon" /> Your Library
-        </a>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <AiOutlineSearch className="nav-icon" /> Search
+          </li>
+          <li>
+            <BiLibrary className="nav-icon" /> Your Library
+          </li>
+        </ol>
       </nav>
+
       <nav className="side-bar-nav-cont">
-        <a>
-          <AiOutlinePlusSquare className="nav-icon" /> Create Playlist
-        </a>
-        <a>
-          <AiOutlineHeart className="nav-icon" /> Liked Songs
-        </a>
+        <ol>
+          <li>
+            <AiOutlinePlusSquare className="nav-icon" /> Create Playlist
+          </li>
+          <li>
+            <AiOutlineHeart className="nav-icon" /> Liked Songs
+          </li>
+        </ol>
       </nav>
 
       <div className="border-line">
         <hr className="nav-line" />
       </div>
       <nav className="side-bar-nav-cont-2">
-        {playlists.map((playlist) => (
-          <a className="nav-icon">{playlist.name}</a>
-        ))}
+        <ol>
+          {playlists.map((playlist) => (
+            <li key={playlist.id}>
+              <Link className="nav-icon" to="">
+                {playlist.name}
+              </Link>
+            </li>
+          ))}
+        </ol>
       </nav>
 
       {/* <div className="footer-nav">
@@ -52,5 +63,5 @@ export default function SideBarNav({ playlists }) {
         <span classname="heart-react-icon"></span>
       </div> */}
     </div>
-  );
+  )
 }

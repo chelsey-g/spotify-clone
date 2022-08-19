@@ -1,42 +1,20 @@
-import { useEffect, useState } from "react"
-import { getAlbum, getAlbumTracks } from "../util/spotify"
-import "./AlbumList.css"
+// import { useState } from "react"
+import "./AlbumView.css"
 import Track from "./Track"
 import { AiFillPlayCircle } from "react-icons/ai"
 import { AiOutlineHeart } from "react-icons/ai"
-import { BsThreeDots } from "react-icons/bs"
+// import { BsThreeDots } from "react-icons/bs"
 import { AiOutlineClockCircle } from "react-icons/ai"
-import { RiArrowRightSFill } from "react-icons/ri"
+// import { RiArrowRightSFill } from "react-icons/ri"
 import MenuNav from "./MenuNav"
 
-export default function AlbumList(props) {
-  const [hidden, setHidden] = useState(true)
-  const [album, setAlbum] = useState(null)
-  const [tracks, setTracks] = useState(null)
+export default function AlbumView(props) {
+  let { album, tracks } = props;
+  // const [hidden, setHidden] = useState(true)
 
-  useEffect(() => {
-    getAlbum(props.album.id)
-      .then((data) => {
-        setAlbum(data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [props.album.id])
-
-  useEffect(() => {
-    getAlbumTracks(props.album.id)
-      .then((data) => {
-        setTracks(data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [props.album.id])
-
-  const handleClick = () => {
-    setHidden(!hidden)
-  }
+  // const handleClick = () => {
+  //   setHidden(!hidden)
+  // }
 
   if (!album || !tracks) {
     return "Loading..."
@@ -98,7 +76,7 @@ export default function AlbumList(props) {
 
             <div className="album-tracks">
               {props.tracks.map((item) => (
-                <Track data={item} key={item.number} />
+                <Track data={item} key={item.id} />
               ))}
             </div>
           </div>

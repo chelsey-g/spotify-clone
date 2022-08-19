@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export default function MediumCard({ id, coverUrl, name, artists }) {
+export default function MediumCard(props) {
+  let { playlist } = props;
   // const [otherClasses, setOtherClasses] = useState("");
 
   // const handleClick = () => {
@@ -15,26 +16,28 @@ export default function MediumCard({ id, coverUrl, name, artists }) {
   //   }
   // };
 
+  if (!playlist) {
+    return "Loading...";
+  }
+
   return (
-    <Link to={`/albums/${id}`}>
+    <Link to={`/albums/${playlist.id}`}>
       <div className="medium-card">
         <div className="medium-card-header">
-          <img className="playlist-img" src={coverUrl} alt="playlist art" />
+          <img className="playlist-img" src={playlist.images[1].url} alt="playlist art" />
           <AiFillPlayCircle
             color="#1DB954"
             size={50}
             className="play-btn"
           ></AiFillPlayCircle>
         </div>
-        <div className="playlist-name">{name}</div>
-        <div className="card-artist">{artists.join()}</div>
+        <div className="playlist-name">{playlist.name}</div>
+        <div className="card-artist">{playlist.artists.map((artist) => artist.name).join(", ")}</div>
       </div>
     </Link>
   );
 }
 
 MediumCard.propTypes = {
-  coverUrl: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  artists: PropTypes.array.isRequired,
+  playlist: PropTypes.object.isRequired
 };

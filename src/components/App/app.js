@@ -1,27 +1,26 @@
 import "./app.css"
 import React, { useEffect, useState } from "react"
 import { Routes, Route } from "react-router-dom"
-import { useSpotify, getPlaylists, getMyAlbums } from "../../util/spotify"
+import { useSpotify, getPlaylists, Login } from "../../util/spotify"
 
 import SideBarNav from "../SideBarNav"
 import AlbumPage from "../../pages/AlbumPage"
 import HomePage from "../../pages/HomePage"
 
 function App() {
-  useSpotify()
+  let token = useSpotify()
+
   const [playlists, setPlaylists] = useState([])
-  const [albums, setAlbums] = useState([])
 
   useEffect(() => {
     getPlaylists().then((data) => {
       setPlaylists(data.items)
     })
-    getMyAlbums().then((data) => {
-      setAlbums(data.items)
-    })
   }, [])
 
-  console.log({ albums, playlists })
+  if (!token) {
+    return <Login />
+  }
 
   if (!playlists) {
     return <div>Loading...</div>
