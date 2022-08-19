@@ -1,20 +1,20 @@
 import "./MainBody.css";
 import React from "react";
-import PlaylistCards from "./PlaylistCards";
+// import PlaylistCards from "./PlaylistCards";
 import MediumCardCollection from "./MediumCardCollection";
-import SmallCardCollection from "./SmallCardCollection";
+// import SmallCardCollection from "./SmallCardCollection";
 
 export default function MainBody({ jumpBackInPlaylist, forYouPlaylist }) {
   return (
     <div className="main-header">
-      <PlaylistCards />
+      {/* <PlaylistCards />
       <span className="header-title">Good morning</span>
       <div className="main-playlist-section">
         <SmallCardCollection playlists={jumpBackInPlaylist} />
       </div>
       <div className="main-playlist-section">
         <SmallCardCollection playlists={forYouPlaylist} />
-      </div>
+      </div> */}
 
       <div className="main-dashboard-section">
         <div className="header-title-2">Good afternoon</div>

@@ -26,14 +26,14 @@
   margin-right: 10px;
 }
 
-.side-bar-nav-cont a {
+.side-bar-nav-cont li {
   display: flex;
   align-items: center;
   height: 30px;
   font-weight: bold;
 }
 
-.side-bar-nav-cont-2 a {
+.side-bar-nav-cont-2 li {
   display: flex;
   align-items: center;
   height: 30px;
