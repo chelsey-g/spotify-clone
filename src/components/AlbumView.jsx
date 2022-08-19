@@ -1,12 +1,12 @@
 // import { useState } from "react"
-import "./AlbumView.css"
-import Track from "./Track"
-import { AiFillPlayCircle } from "react-icons/ai"
-import { AiOutlineHeart } from "react-icons/ai"
+import "./AlbumView.css";
+import Track from "./Track";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 // import { BsThreeDots } from "react-icons/bs"
-import { AiOutlineClockCircle } from "react-icons/ai"
+import { AiOutlineClockCircle } from "react-icons/ai";
 // import { RiArrowRightSFill } from "react-icons/ri"
-import MenuNav from "./MenuNav"
+import MenuNav from "./MenuNav";
 
 export default function AlbumView(props) {
   let { album, tracks } = props;
@@ -17,17 +17,17 @@ export default function AlbumView(props) {
   // }
 
   if (!album || !tracks) {
-    return "Loading..."
+    return "Loading...";
   }
 
   // get year from abum release date
-  const year = album.release_date.split("-")[0]
+  const year = album.release_date.split("-")[0];
   const duration = album.tracks.items.reduce((acc, curr) => {
-    return acc + curr.duration_ms
-  }, 0)
-  const duration_ms = duration / 1000
-  const duration_min = Math.floor(duration_ms / 60)
-  const duration_sec = Math.floor(duration_ms % 60)
+    return acc + curr.duration_ms;
+  }, 0);
+  const duration_ms = duration / 1000;
+  const duration_min = Math.floor(duration_ms / 60);
+  const duration_sec = Math.floor(duration_ms % 60);
 
   return (
     <div className="album-info">
@@ -84,5 +84,5 @@ export default function AlbumView(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

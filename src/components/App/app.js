@@ -1,29 +1,29 @@
-import "./app.css"
-import React, { useEffect, useState } from "react"
-import { Routes, Route } from "react-router-dom"
-import { useSpotify, getPlaylists, Login } from "../../util/spotify"
+import "./app.css";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useSpotify, getPlaylists, Login } from "../../util/spotify";
 
-import SideBarNav from "../SideBarNav"
-import AlbumPage from "../../pages/AlbumPage"
-import HomePage from "../../pages/HomePage"
+import SideBarNav from "../SideBarNav";
+import AlbumPage from "../../pages/AlbumPage";
+import HomePage from "../../pages/HomePage";
 
 function App() {
-  let token = useSpotify()
+  let token = useSpotify();
 
-  const [playlists, setPlaylists] = useState([])
+  const [playlists, setPlaylists] = useState(null);
 
   useEffect(() => {
     getPlaylists().then((data) => {
-      setPlaylists(data.items)
-    })
-  }, [])
+      setPlaylists(data.items);
+    });
+  }, []);
 
   if (!token) {
-    return <Login />
+    return <Login />;
   }
 
   if (!playlists) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -34,7 +34,7 @@ function App() {
         <Route path="/albums/:id" element={<AlbumPage />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
