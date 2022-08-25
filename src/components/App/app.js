@@ -6,6 +6,7 @@ import { useSpotify, getPlaylists, Login } from "../../util/spotify";
 import SideBarNav from "../SideBarNav";
 import AlbumPage from "../../pages/AlbumPage";
 import HomePage from "../../pages/HomePage";
+import PlaylistPage from "../../pages/PlaylistPage";
 
 function App() {
   let token = useSpotify();
@@ -32,6 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
+        <Route path="/playlist/:id" element={<PlaylistPage />} />
       </Routes>
     </div>
   );

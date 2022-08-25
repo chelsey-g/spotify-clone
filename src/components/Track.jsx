@@ -22,13 +22,27 @@ export default function Track(props) {
   duration_sec = duration_sec < 10 ? "0" + duration_sec : duration_sec;
   duration = duration_min + ":" + duration_sec;
 
+  // tracks.items[0].track.album.name//
+
+  // props.data - the shape of? playlists
+
+  // props.track
+  // props.album
+
+  // <Track data={data} />
+  // <Track track={track} album={album} />
+
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
+      {/* TODO: track number not in order...? */}
       <div className="album-track-number">{props.data.track_number}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
       </div>
+      <div className="album-name">{props.album.name}</div>
+
+      {/* TODO: remove the military time 0?  */}
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />

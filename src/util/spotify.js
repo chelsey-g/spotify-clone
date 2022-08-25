@@ -99,6 +99,10 @@ export function getPlaylists() {
   return request("https://api.spotify.com/v1/me/playlists");
 }
 
+export function getPlaylist(id) {
+  return request(`https://api.spotify.com/v1/playlists/${id}`);
+}
+
 export function getUserTopArtists() {
   return request("https://api.spotify.com/v1/me/top/artists");
 }

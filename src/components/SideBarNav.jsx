@@ -1,11 +1,11 @@
-import React from "react"
-import "./SideBarNav.css"
-import { MdHomeFilled } from "react-icons/md"
-import { AiOutlineSearch } from "react-icons/ai"
-import { AiOutlinePlusSquare } from "react-icons/ai"
-import { AiOutlineHeart } from "react-icons/ai"
-import { BiLibrary } from "react-icons/bi"
-import { Link } from "react-router-dom"
+import React from "react";
+import "./SideBarNav.css";
+import { MdHomeFilled } from "react-icons/md";
+import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlinePlusSquare } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BiLibrary } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function SideBarNav({ playlists }) {
   return (
@@ -49,7 +49,7 @@ export default function SideBarNav({ playlists }) {
         <ol>
           {playlists.map((playlist) => (
             <li key={playlist.id}>
-              <Link className="nav-icon" to="">
+              <Link className="nav-icon" to={`/playlist/${playlist.id}`}>
                 {playlist.name}
               </Link>
             </li>
@@ -63,5 +63,5 @@ export default function SideBarNav({ playlists }) {
         <span classname="heart-react-icon"></span>
       </div> */}
     </div>
-  )
+  );
 }

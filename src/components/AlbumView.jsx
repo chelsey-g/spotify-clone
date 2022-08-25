@@ -76,7 +76,7 @@ export default function AlbumView(props) {
 
             <div className="album-tracks">
               {props.tracks.map((item) => (
-                <Track data={item} key={item.id} />
+                <Track data={item} key={item.id} album={album} />
               ))}
             </div>
           </div>

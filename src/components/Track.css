@@ -1,17 +1,21 @@
 .album-tracks-info {
   display: grid;
-  grid-template-columns: 36px 1200px 38px 50px;
+  grid-template-columns: 31px 670px 520px 62px 50px;
   align-items: center;
   padding: 0 16px;
   grid-column-gap: 20px;
   column-gap: 16px;
+  width: 100%;
+}
+
+.album-tracks-info:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  width: 1380px;
+  border-radius: 4px;
 }
 .track-button {
   opacity: 100%;
-}
-
-.track-button:hover {
-  opacity: 100%;
+  display: none;
 }
 
 .album-track-name {
@@ -32,12 +36,12 @@
   color: #b3b3b3;
 }
 
-.album-tracks-number,
+/* .album-tracks-number,
 .album-tracks-title,
-.album-tracks-duration {
-  border-bottom: 2px solid white;
+.album-tracks-duration,
+.album-name {
   color: #b3b3b3;
-}
+} */
 
 .album-track-menu {
   height: 10px;
