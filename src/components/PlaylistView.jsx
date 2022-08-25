@@ -23,12 +23,38 @@ export default function PlaylistView(props) {
 
   // get year from abum release date
   // const year = playlist.release_date.split("-")[0];
-  // const duration = playlist.tracks.items.reduce((acc, curr) => {
-  //   return acc + curr.duration_ms;
-  // }, 0);
+
+  function formatDuration(duration) {
+    var seconds = Math.floor((duration / 1000) % 60);
+    var minutes = Math.floor((duration / (1000 * 60)) % 60);
+    var hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    var result = "";
+    if (hours) {
+      result += `${hours} hours `;
+    }
+
+    if (minutes) {
+      result += `${minutes} mins `;
+    }
+
+    if (seconds) {
+      result += `${seconds} secs`;
+    }
+
+    return result;
+    // return { hours, minutes, seconds };
+    // return `${hours} hours, ${minutes} minutes, ${seconds} seconds `
+  }
+
+  const duration_ms = playlist.tracks.items.reduce((acc, curr) => {
+    return acc + curr.track.duration_ms;
+  }, 0);
+
+  let duration = formatDuration(duration_ms);
+
   // const duration_ms = Math.floor(duration / 1000);
   // const duration_min = Math.floor(duration_ms / 1000);
-  // const duration_sec = Math.floor(duration_ms / 1000) % 60;
+  // const duration_sec = Math.floor((duration_ms / 1000) % 60);
 
   return (
     <div className="album-info">
@@ -56,9 +82,7 @@ export default function PlaylistView(props) {
             <span className="playlist-likes">4,442,097 likes • </span>
             <span className="track-total">{playlist.tracks.total} songs, </span>
             {/* TODO: ??? look into this */}
-            {/* <span className="album-time-total">
-              {duration_min} min {duration_sec} sec */}
-            {/* </span> */}
+            <span className="album-time-total">{duration}</span>
           </div>
         </div>
       </div>
