@@ -1,11 +1,10 @@
-// import { useState } from "react"
 import "./PlaylistView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-// import { BsThreeDots } from "react-icons/bs"
+
 import { AiOutlineClockCircle } from "react-icons/ai";
-// import { RiArrowRightSFill } from "react-icons/ri"
+
 import MenuNav from "./MenuNav";
 
 export default function PlaylistView(props) {
@@ -52,9 +51,10 @@ export default function PlaylistView(props) {
 
   let duration = formatDuration(duration_ms);
 
-  // const duration_ms = Math.floor(duration / 1000);
-  // const duration_min = Math.floor(duration_ms / 1000);
-  // const duration_sec = Math.floor((duration_ms / 1000) % 60);
+  // import { useState } from "react";
+  // props.tracks.items.sort(function (a, b) {
+  //   return a.track.track_number - b.track.track_number;
+  // });
 
   return (
     <div className="album-info">
@@ -110,11 +110,12 @@ export default function PlaylistView(props) {
             </div>
 
             <div className="album-tracks">
-              {props.tracks.items.map((item) => (
+              {props.tracks.items.map((item, index) => (
                 <Track
                   data={item.track}
                   key={item.track.id}
                   album={item.track.album}
+                  index={index + 1}
                 />
               ))}
             </div>

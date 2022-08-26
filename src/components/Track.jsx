@@ -15,34 +15,36 @@ export default function Track(props) {
     startPlayback(uri);
   };
 
+  // debugger;
+
+  // let tracks = [{ track_numer: 2 }, { track_numer: 3 }];
+  // tracks.sort(function (a, b) {
+  //   return a.track_numer - b.track_numer;
+  // });
+
+  // function formatTrackNumber() {
+  // const trackNumbers = {props,data.track_number};
+
+  //   const numAscending = [formatTrackNumber.sort((a, b) => a.id - b.id);
+  //   console.log(numAscending);
+  // }
+
   let duration = props.data.duration_ms / 1000;
   let duration_min = Math.floor(duration / 60);
   let duration_sec = Math.floor(duration % 60);
-  duration_min = duration_min < 10 ? "0" + duration_min : duration_min;
+  duration_min = duration_min < 10 ? +duration_min : duration_min;
   duration_sec = duration_sec < 10 ? "0" + duration_sec : duration_sec;
   duration = duration_min + ":" + duration_sec;
-
-  // tracks.items[0].track.album.name//
-
-  // props.data - the shape of? playlists
-
-  // props.track
-  // props.album
-
-  // <Track data={data} />
-  // <Track track={track} album={album} />
 
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       {/* TODO: track number not in order...? */}
-      <div className="album-track-number">{props.data.track_number}</div>
+      <div className="album-track-number">{props.index}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
       </div>
       <div className="album-name">{props.album.name}</div>
-
-      {/* TODO: remove the military time 0?  */}
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
