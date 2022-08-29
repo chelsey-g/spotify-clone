@@ -1,26 +1,19 @@
-// import { useState } from "react"
 import "./AlbumView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-// import { BsThreeDots } from "react-icons/bs"
+
 import { AiOutlineClockCircle } from "react-icons/ai";
-// import { RiArrowRightSFill } from "react-icons/ri"
+
 import MenuNav from "./MenuNav";
 
 export default function AlbumView(props) {
   let { album, tracks } = props;
-  // const [hidden, setHidden] = useState(true)
-
-  // const handleClick = () => {
-  //   setHidden(!hidden)
-  // }
 
   if (!album || !tracks) {
     return "Loading...";
   }
 
-  // get year from abum release date
   const year = album.release_date.split("-")[0];
   const duration = album.tracks.items.reduce((acc, curr) => {
     return acc + curr.duration_ms;
@@ -70,6 +63,7 @@ export default function AlbumView(props) {
           <div className="tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
+            <div className="album-name">ALBUM</div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>

@@ -101,7 +101,7 @@ export default function PlaylistView(props) {
         </div>
 
         <div className="tracks-list">
-          <div className="tracks-header">
+          <div className="playlist-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
             <div className="plylist-album-title">ALBUM</div>
