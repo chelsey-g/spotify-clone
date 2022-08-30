@@ -1,0 +1,97 @@
+.album-info {
+  display: flex;
+  background-color: #473288;
+
+  width: 1495px;
+  flex-wrap: wrap;
+  color: white;
+  text-decoration: bold;
+}
+
+.album-image {
+  padding-left: 32px;
+  padding-right: 27px;
+  width: 232px;
+  height: 232px;
+}
+
+.album-text {
+  font-weight: 700;
+  font-size: 0.75rem;
+  align-items: flex-end;
+}
+
+.album-text p {
+  text-transform: uppercase;
+}
+
+.album-text h1 {
+  text-transform: none;
+  font-size: 96px;
+}
+.artist-album-info {
+  font-size: 0.875rem;
+}
+
+.album-header {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  padding-bottom: 24px;
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+.artist-name {
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.album-time-total {
+  color: hsla(0, 0%, 100%, 0.7);
+  text-transform: none;
+}
+
+.album-year,
+.track-total {
+  font-weight: none;
+  text-transform: none;
+}
+
+.album-content {
+  background-color: black;
+}
+
+.album-buttons {
+  background-image: linear-gradient(#473288, #000000);
+  padding: 24px;
+  display: flex;
+}
+
+.album-list-btn {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.album-options {
+  width: 1495px;
+}
+
+.track-number {
+  padding-left: 13px;
+}
+
+.tracks-header {
+  margin: 0 20px 16px 40px;
+  padding: 8px 16px;
+  color: #b3b3b3;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 66px 1193px 16px;
+}
+
+.album-cr {
+  display: flex;
+  margin-top: 32px;
+}

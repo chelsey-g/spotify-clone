@@ -37,7 +37,8 @@ export default function SideBarNav({ playlists }) {
             <AiOutlinePlusSquare className="nav-icon" /> Create Playlist
           </li>
           <li>
-            <AiOutlineHeart className="nav-icon" /> Liked Songs
+            <AiOutlineHeart className="nav-icon" />
+            <Link to="{LikedSongsView}">Liked Songs</Link>
           </li>
         </ol>
       </nav>

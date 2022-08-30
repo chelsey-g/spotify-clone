@@ -103,6 +103,10 @@ export function getPlaylist(id) {
   return request(`https://api.spotify.com/v1/playlists/${id}`);
 }
 
+export function getLikedSongs() {
+  return request("https://api.spotify.com/v1/me/tracks");
+}
+
 export function getUserTopArtists() {
   return request("https://api.spotify.com/v1/me/top/artists");
 }

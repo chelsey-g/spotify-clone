@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { RiArrowRightSFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
+import PropTypes from "prop-types";
 
 export default function Track(props) {
   const [hidden, setHidden] = useState(true);
@@ -34,15 +35,12 @@ export default function Track(props) {
 
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
-      {/* TODO: track number not in order...? */}
       <div className="album-track-number">{props.data.track_number}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
       </div>
       <div className="album-name">{props.album.name}</div>
-
-      {/* TODO: remove the military time 0?  */}
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
@@ -78,3 +76,8 @@ export default function Track(props) {
     </div>
   );
 }
+
+Track.propTypes = {
+  data: PropTypes.object.isRequired,
+  album: PropTypes.object.isRequired,
+};
