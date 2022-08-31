@@ -51,26 +51,29 @@ export default function LikedSongsView(props) {
         <div className="album-options">
           <div className="album-buttons">
             <span className="album-list-btn">
-              <AiFillPlayCircle color="#1DB954" size={50} />
+              <AiFillPlayCircle color="#1DB954" size={60} />
             </span>
-            <span className="album-list-btn">
-              <AiOutlineHeart size={50} />
-            </span>
-            <MenuNav className="album-list-btn" />
           </div>
         </div>
 
         <div className="tracks-list">
-          <div className="tracks-header">
+          <div className="likedsongs-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
+            <div className="liked-songs-album">ALBUM</div>
+            <div className="likedsongs-dateadded">DATE ADDED</div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
 
             <div className="album-tracks">
               {props.tracks.map((item) => (
-                <Track data={item} key={item.id} album={item.track.album} />
+                <Track
+                  data={item.track}
+                  key={item.id}
+                  album={item.track.album}
+                  date_added={item.added_at}
+                />
               ))}
             </div>
           </div>

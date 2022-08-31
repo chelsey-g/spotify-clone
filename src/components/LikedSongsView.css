@@ -5,7 +5,7 @@
   width: 1495px;
   flex-wrap: wrap;
   color: white;
-  text-decoration: bold;
+  /* text-decoration: bold; */
 }
 
 .album-image {
@@ -55,7 +55,6 @@
 
 .album-year,
 .track-total {
-  font-weight: none;
   text-transform: none;
 }
 
@@ -82,13 +81,13 @@
   padding-left: 13px;
 }
 
-.tracks-header {
+.likedsongs-tracks-header {
   margin: 0 20px 16px 40px;
   padding: 8px 16px;
   color: #b3b3b3;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: 66px 1193px 16px;
+  grid-template-columns: 66px 300px 463px 400px 43px;
 }
 
 .album-cr {
