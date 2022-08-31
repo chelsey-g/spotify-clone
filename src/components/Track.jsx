@@ -19,19 +19,9 @@ export default function Track(props) {
   let duration = props.data.duration_ms / 1000;
   let duration_min = Math.floor(duration / 60);
   let duration_sec = Math.floor(duration % 60);
-  duration_min = duration_min < 10 ? "0" + duration_min : duration_min;
+  duration_min = duration_min < 10 ? +duration_min : duration_min;
   duration_sec = duration_sec < 10 ? "0" + duration_sec : duration_sec;
   duration = duration_min + ":" + duration_sec;
-
-  // tracks.items[0].track.album.name//
-
-  // props.data - the shape of? playlists
-
-  // props.track
-  // props.album
-
-  // <Track data={data} />
-  // <Track track={track} album={album} />
 
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
@@ -41,6 +31,7 @@ export default function Track(props) {
         <span className="album-track-artist">{props.data.artist}</span>
       </div>
       <div className="album-name">{props.album.name}</div>
+      <div className="likedsongs-dateadded">{props.date_added}</div>
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
@@ -80,4 +71,5 @@ export default function Track(props) {
 Track.propTypes = {
   data: PropTypes.object.isRequired,
   album: PropTypes.object.isRequired,
+  date_added: PropTypes.string.isRequired,
 };
