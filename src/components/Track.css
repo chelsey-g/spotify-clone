@@ -12,10 +12,12 @@
   background-color: hsla(0, 0%, 100%, 0.1);
   width: 1380px;
   border-radius: 4px;
+  border: 1px;
 }
 .track-button {
   opacity: 100%;
   display: none;
+  border: 1px;
 }
 
 .album-track-name {
@@ -35,13 +37,6 @@
   font-size: 14px;
   color: #b3b3b3;
 }
-
-/* .album-tracks-number,
-.album-tracks-title,
-.album-tracks-duration,
-.album-name {
-  color: #b3b3b3;
-} */
 
 .album-track-menu {
   height: 10px;

@@ -91,11 +91,14 @@
   width: 1495px;
 }
 
+.album-name {
+  display: grid;
+}
 .track-number {
   padding-left: 13px;
 }
 
-.tracks-header {
+.playlist-tracks-header {
   margin: 0 20px 16px 40px;
   padding: 8px 16px;
   color: #b3b3b3;

@@ -62,13 +62,19 @@ export default function AlbumView(props) {
           <div className="albumview-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
+            <div className="album-name">ALBUM</div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
 
             <div className="album-tracks">
-              {props.tracks.map((item) => (
-                <Track data={item} key={item.id} album={album} />
+              {props.tracks.map((item, index) => (
+                <Track
+                  data={item}
+                  key={item.id}
+                  album={album}
+                  index={index + 1}
+                />
               ))}
             </div>
           </div>

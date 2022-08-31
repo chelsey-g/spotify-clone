@@ -16,6 +16,20 @@ export default function Track(props) {
     startPlayback(uri);
   };
 
+  // debugger;
+
+  // let tracks = [{ track_numer: 2 }, { track_numer: 3 }];
+  // tracks.sort(function (a, b) {
+  //   return a.track_numer - b.track_numer;
+  // });
+
+  // function formatTrackNumber() {
+  // const trackNumbers = {props,data.track_number};
+
+  //   const numAscending = [formatTrackNumber.sort((a, b) => a.id - b.id);
+  //   console.log(numAscending);
+  // }
+
   let duration = props.data.duration_ms / 1000;
   let duration_min = Math.floor(duration / 60);
   let duration_sec = Math.floor(duration % 60);
@@ -25,7 +39,7 @@ export default function Track(props) {
 
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
-      <div className="album-track-number">{props.data.track_number}</div>
+      <div className="album-track-number">{props.index}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>

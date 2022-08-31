@@ -1,11 +1,10 @@
-// import { useState } from "react"
 import "./PlaylistView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-// import { BsThreeDots } from "react-icons/bs"
+
 import { AiOutlineClockCircle } from "react-icons/ai";
-// import { RiArrowRightSFill } from "react-icons/ri"
+
 import MenuNav from "./MenuNav";
 
 export default function PlaylistView(props) {
@@ -23,12 +22,39 @@ export default function PlaylistView(props) {
 
   // get year from abum release date
   // const year = playlist.release_date.split("-")[0];
-  // const duration = playlist.tracks.items.reduce((acc, curr) => {
-  //   return acc + curr.duration_ms;
-  // }, 0);
-  // const duration_ms = Math.floor(duration / 1000);
-  // const duration_min = Math.floor(duration_ms / 1000);
-  // const duration_sec = Math.floor(duration_ms / 1000) % 60;
+
+  function formatDuration(duration) {
+    var seconds = Math.floor((duration / 1000) % 60);
+    var minutes = Math.floor((duration / (1000 * 60)) % 60);
+    var hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    var result = "";
+    if (hours) {
+      result += `${hours} hours `;
+    }
+
+    if (minutes) {
+      result += `${minutes} mins `;
+    }
+
+    if (seconds) {
+      result += `${seconds} secs`;
+    }
+
+    return result;
+    // return { hours, minutes, seconds };
+    // return `${hours} hours, ${minutes} minutes, ${seconds} seconds `
+  }
+
+  const duration_ms = playlist.tracks.items.reduce((acc, curr) => {
+    return acc + curr.track.duration_ms;
+  }, 0);
+
+  let duration = formatDuration(duration_ms);
+
+  // import { useState } from "react";
+  // props.tracks.items.sort(function (a, b) {
+  //   return a.track.track_number - b.track.track_number;
+  // });
 
   return (
     <div className="album-info">
@@ -56,9 +82,7 @@ export default function PlaylistView(props) {
             <span className="playlist-likes">4,442,097 likes • </span>
             <span className="track-total">{playlist.tracks.total} songs, </span>
             {/* TODO: ??? look into this */}
-            {/* <span className="album-time-total">
-              {duration_min} min {duration_sec} sec */}
-            {/* </span> */}
+            <span className="album-time-total">{duration}</span>
           </div>
         </div>
       </div>
@@ -77,7 +101,7 @@ export default function PlaylistView(props) {
         </div>
 
         <div className="tracks-list">
-          <div className="tracks-header">
+          <div className="playlist-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
             <div className="plylist-album-title">ALBUM</div>
@@ -86,11 +110,12 @@ export default function PlaylistView(props) {
             </div>
 
             <div className="album-tracks">
-              {props.tracks.items.map((item) => (
+              {props.tracks.items.map((item, index) => (
                 <Track
                   data={item.track}
                   key={item.track.id}
                   album={item.track.album}
+                  index={index + 1}
                 />
               ))}
             </div>
