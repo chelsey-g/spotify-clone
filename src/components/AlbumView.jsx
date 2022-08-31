@@ -8,17 +8,11 @@ import Proptypes from "prop-types";
 
 export default function AlbumView(props) {
   let { album, tracks } = props;
-  // const [hidden, setHidden] = useState(true)
-
-  // const handleClick = () => {
-  //   setHidden(!hidden)
-  // }
 
   if (!album || !tracks) {
     return "Loading...";
   }
 
-  // get year from abum release date
   const year = album.release_date.split("-")[0];
   const duration = album.tracks.items.reduce((acc, curr) => {
     return acc + curr.duration_ms;
