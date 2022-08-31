@@ -1,12 +1,10 @@
-// import { useState } from "react"
 import "./AlbumView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-// import { BsThreeDots } from "react-icons/bs"
 import { AiOutlineClockCircle } from "react-icons/ai";
-// import { RiArrowRightSFill } from "react-icons/ri"
 import MenuNav from "./MenuNav";
+import Proptypes from "prop-types";
 
 export default function AlbumView(props) {
   let { album, tracks } = props;
@@ -67,7 +65,7 @@ export default function AlbumView(props) {
         </div>
 
         <div className="tracks-list">
-          <div className="tracks-header">
+          <div className="albumview-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
             <div className="track-duration">
@@ -86,3 +84,8 @@ export default function AlbumView(props) {
     </div>
   );
 }
+
+AlbumView.propTypes = {
+  album: Proptypes.object,
+  tracks: Proptypes.array,
+};
