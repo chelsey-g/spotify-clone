@@ -62,7 +62,6 @@ export default function AlbumView(props) {
           <div className="albumview-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
-            <div className="album-name">ALBUM</div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
@@ -72,7 +71,7 @@ export default function AlbumView(props) {
                 <Track
                   data={item}
                   key={item.id}
-                  album={album}
+                  album={album.name}
                   index={index + 1}
                 />
               ))}
