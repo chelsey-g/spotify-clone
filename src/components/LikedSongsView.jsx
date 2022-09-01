@@ -67,12 +67,13 @@ export default function LikedSongsView(props) {
             </div>
 
             <div className="album-tracks">
-              {props.tracks.map((item) => (
+              {props.tracks.map((item, index) => (
                 <Track
                   data={item.track}
                   key={item.id}
                   album={item.track.album}
                   date_added={item.added_at}
+                  index={index + 1}
                 />
               ))}
             </div>
