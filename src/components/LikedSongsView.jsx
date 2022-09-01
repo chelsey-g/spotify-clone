@@ -1,25 +1,14 @@
-// import { useState } from "react"
 import "./LikedSongsView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import MenuNav from "./MenuNav";
 
 export default function LikedSongsView(props) {
-  let { totalSongs, tracks } = props;
+  let { totalTracks, tracks } = props;
 
   if (!tracks) {
     return "Loading...";
   }
-
-  // const year = album.release_date.split("-")[0];
-  // const duration = album.tracks.items.reduce((acc, curr) => {
-  //   return acc + curr.duration_ms;
-  // }, 0);
-  // const duration_ms = duration / 1000;
-  // const duration_min = Math.floor(duration_ms / 60);
-  // const duration_sec = Math.floor(duration_ms % 60);
 
   return (
     <div className="album-info">
@@ -33,16 +22,13 @@ export default function LikedSongsView(props) {
           <p>Album</p>
           <h1>Liked Songs</h1>
           <div className="artist-album-info">
-            {/* <span className="artist-name">
-              {album.artists.map((artist) => artist.name).join(", ")} •{" "}
-            </span> */}
-            {/* <span className="album-year">{year} • </span> */}
-            {/* <span className="track-total">
-              {props.totalSongs.total} songs,{" "}
-            </span> */}
-            {/* <span className="album-time-total">
-              {duration_min} min {duration_sec} sec
-            </span> */}
+            <img
+              className="likedsongs-profpic"
+              alt="profile picture"
+              src="https://tinyurl.com/mwdzt52n"
+            ></img>
+            <span className="likedsongs-username">Chelsey Gowac •</span>
+            <span className="likedsongs-track-total">{totalTracks} songs </span>
           </div>
         </div>
       </div>

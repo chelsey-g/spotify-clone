@@ -22,5 +22,7 @@ export default function LikedSongsPage(props) {
     return "Loading...";
   }
 
-  return <LikedSongsView tracks={likedSongs.items} />;
+  return (
+    <LikedSongsView tracks={likedSongs.items} totalTracks={likedSongs.total} />
+  );
 }

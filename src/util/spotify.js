@@ -127,6 +127,10 @@ export function getAvailableDevices() {
   return request("https://api.spotify.com/v1/me/player/devices");
 }
 
+export function getUserProfile() {
+  return request("https://api.spotify.com/v1/me");
+}
+
 export async function startPlayback(uri, deviceId = null) {
   if (!deviceId) {
     let res = await getAvailableDevices();

@@ -31,6 +31,7 @@
 }
 .artist-album-info {
   font-size: 0.875rem;
+  display: flex;
 }
 
 .album-header {
@@ -41,20 +42,30 @@
   align-items: flex-end;
   font-weight: bold;
 }
+.likedsongs-profpic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 10px;
+}
 
-.artist-name {
+.likedsongs-username {
   font-size: 0.875rem;
   font-weight: bold;
   text-transform: none;
+  padding-top: 17px;
+  padding-right: 6px;
+  align-items: center;
 }
-
+.likedsongs-track-total {
+  padding-top: 17px;
+}
 .album-time-total {
   color: hsla(0, 0%, 100%, 0.7);
   text-transform: none;
 }
 
-.album-year,
-.track-total {
+.album-year {
   text-transform: none;
 }
 
