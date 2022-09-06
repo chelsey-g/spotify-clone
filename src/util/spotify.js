@@ -123,6 +123,10 @@ export function getAvailableDevices() {
   return request("https://api.spotify.com/v1/me/player/devices");
 }
 
+export function getSearchItems() {
+  return request("https://api.spotify.com/v1/search");
+}
+
 export async function startPlayback(uri, deviceId = null) {
   if (!deviceId) {
     let res = await getAvailableDevices();
