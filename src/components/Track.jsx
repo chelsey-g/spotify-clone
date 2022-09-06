@@ -29,6 +29,7 @@ export default function Track(props) {
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
+        <div className="artist-name-track">{props.album.artists[0].name}</div>
       </div>
       <div className="album-name">{props.album.name}</div>
       <div className="likedsongs-dateadded">{props.date_added}</div>

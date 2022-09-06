@@ -32,6 +32,12 @@
   width: 200px;
 }
 
+.artist-name-track {
+  display: grid;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
 .album-track-name span {
   font-weight: 400;
   font-size: 14px;
