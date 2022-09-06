@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { RiArrowRightSFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
+import PropTypes from "prop-types";
 
 export default function Track(props) {
   const [hidden, setHidden] = useState(true);
@@ -15,20 +16,6 @@ export default function Track(props) {
     startPlayback(uri);
   };
 
-  // debugger;
-
-  // let tracks = [{ track_numer: 2 }, { track_numer: 3 }];
-  // tracks.sort(function (a, b) {
-  //   return a.track_numer - b.track_numer;
-  // });
-
-  // function formatTrackNumber() {
-  // const trackNumbers = {props,data.track_number};
-
-  //   const numAscending = [formatTrackNumber.sort((a, b) => a.id - b.id);
-  //   console.log(numAscending);
-  // }
-
   let duration = props.data.duration_ms / 1000;
   let duration_min = Math.floor(duration / 60);
   let duration_sec = Math.floor(duration % 60);
@@ -38,13 +25,14 @@ export default function Track(props) {
 
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
-      {/* TODO: track number not in order...? */}
       <div className="album-track-number">{props.index}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
+        <div className="artist-name-track">{props.album.artists[0].name}</div>
       </div>
       <div className="album-name">{props.album.name}</div>
+      <div className="likedsongs-dateadded">{props.date_added}</div>
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
@@ -80,3 +68,9 @@ export default function Track(props) {
     </div>
   );
 }
+
+Track.propTypes = {
+  data: PropTypes.object.isRequired,
+  album: PropTypes.object.isRequired,
+  date_added: PropTypes.string.isRequired,
+};
