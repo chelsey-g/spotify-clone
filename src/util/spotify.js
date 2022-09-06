@@ -103,10 +103,6 @@ export function getPlaylist(id) {
   return request(`https://api.spotify.com/v1/playlists/${id}`);
 }
 
-export function getLikedSongs() {
-  return request("https://api.spotify.com/v1/me/tracks");
-}
-
 export function getUserTopArtists() {
   return request("https://api.spotify.com/v1/me/top/artists");
 }
@@ -125,14 +121,6 @@ export function getAlbumTracks(id) {
 
 export function getAvailableDevices() {
   return request("https://api.spotify.com/v1/me/player/devices");
-}
-
-export function getUserProfile() {
-  return request("https://api.spotify.com/v1/me");
-}
-
-export function getSearchItems() {
-  return request("https://api.spotify.com/v1/search");
 }
 
 export async function startPlayback(uri, deviceId = null) {

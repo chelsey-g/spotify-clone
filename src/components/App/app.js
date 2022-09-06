@@ -7,7 +7,6 @@ import SideBarNav from "../SideBarNav";
 import AlbumPage from "../../pages/AlbumPage";
 import HomePage from "../../pages/HomePage";
 import PlaylistPage from "../../pages/PlaylistPage";
-import LikedSongsPage from "../../pages/LikedSongsPage";
 
 function App() {
   let token = useSpotify();
@@ -33,7 +32,6 @@ function App() {
       <SideBarNav playlists={playlists} className="left" />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/collection/tracks" element={<LikedSongsPage />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
       </Routes>

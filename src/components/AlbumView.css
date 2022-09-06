@@ -1,3 +1,7 @@
+/* body {
+  border: 1px solid blue;
+} */
+
 .album-info {
   display: flex;
   background-color: #894b45;
@@ -5,6 +9,7 @@
   width: 1495px;
   flex-wrap: wrap;
   color: white;
+  text-decoration: bold;
 }
 
 .album-image {
@@ -56,6 +61,7 @@
 
 .album-year,
 .track-total {
+  font-weight: none;
   text-transform: none;
 }
 
@@ -82,16 +88,37 @@
   padding-left: 13px;
 }
 
-.albumview-tracks-header {
+.tracks-header {
   margin: 0 20px 16px 40px;
   padding: 8px 16px;
   color: #b3b3b3;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: 63px 1196px 16px;
+  grid-template-columns: 66px 655px 526px 24px;
 }
 
 .album-cr {
   display: flex;
   margin-top: 32px;
 }
+
+/* .playlist-arrow {
+  padding-left: 5px;
+}
+
+.playlist-arrow-nav-cont {
+  border-radius: 4px;
+  background-color: #282828;
+  width: 258px;
+  height: 565px;
+  padding: 17px;
+  position: fixed;
+  z-index: 9999;
+  left: 364px;
+  bottom: -220px;
+}
+
+.playlist-arrow-nav:hover {
+  border-radius: 4px;
+  background: hsla(0, 0%, 100%, 0.1);
+} */
