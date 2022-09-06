@@ -1,7 +1,7 @@
 import "./Track.css";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { RiArrowRightSFill } from "react-icons/ri";
+import { RiArrowRightSFill, RiOpenSourceFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
 import PropTypes from "prop-types";
 
@@ -26,6 +26,7 @@ export default function Track(props) {
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       <div className="album-track-number">{props.index}</div>
+      <div className="album-art-track">{props.images.url}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>

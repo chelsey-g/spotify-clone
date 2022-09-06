@@ -20,7 +20,7 @@ export default function LikedSongsView(props) {
           src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
         />
         <div className="album-text">
-          <p>Album</p>
+          <p>Playlist</p>
           <h1>Liked Songs</h1>
           <div className="artist-album-info">
             <img
@@ -61,6 +61,7 @@ export default function LikedSongsView(props) {
                   album={item.track.album}
                   date_added={item.added_at}
                   index={index + 1}
+                  // art={item.images}
                 />
               ))}
             </div>

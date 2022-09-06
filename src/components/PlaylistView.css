@@ -13,13 +13,14 @@
   height: 192px;
 }
 
-.album-text {
+.playlist-album-text {
   /* font-weight: 700; */
   font-size: 0.75rem;
   align-items: flex-end;
+  text-transform: none;
 }
 
-.album-text p {
+.playlist-album-text p {
   margin-top: 8px;
   padding-bottom: 25px;
   font-size: 16px;
@@ -27,14 +28,14 @@
   font-weight: normal;
 }
 
-.album-text h1 {
+.playlist-album-text h1 {
   text-transform: none;
   font-size: 96px;
   padding-top: 9.6px;
   padding-bottom: 13.5px;
 }
 
-.album-text h3 {
+.playlist-album-text h3 {
   text-transform: uppercase;
   padding-bottom: 8px;
 }
@@ -67,11 +68,17 @@
   text-transform: none;
 }
 
-.album-year,
-.track-total {
+.album-year {
   text-transform: none;
 }
 
+.playlist-track-total {
+  padding-left: 5px;
+}
+
+.album-time-total {
+  padding-left: 5px;
+}
 .album-content {
   background-color: black;
 }
@@ -104,7 +111,7 @@
   color: #b3b3b3;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: 66px 655px 526px 24px;
+  grid-template-columns: 66px 300px 871px 35px;
 }
 
 .album-cr {

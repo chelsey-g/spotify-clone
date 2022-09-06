@@ -1,6 +1,6 @@
 .album-tracks-info {
   display: grid;
-  grid-template-columns: 34px 315px 464px 386px 57px;
+  grid-template-columns: 20px 33px 280px 464px 392px 57px;
   align-items: center;
   padding: 0 16px;
   grid-column-gap: 20px;
@@ -18,6 +18,12 @@
   opacity: 100%;
   display: none;
   border: 1px;
+}
+
+.album-art-track {
+  border: 1px solid red;
+  width: 40px;
+  height: 40px;
 }
 
 .album-track-name {

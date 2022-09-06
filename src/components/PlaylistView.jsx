@@ -64,24 +64,22 @@ export default function PlaylistView(props) {
           className="album-image"
           src={playlist.images[0].url}
         />
-        <div className="album-text">
+        <div className="playlist-album-text">
           <h3>Playlist</h3>
           <h1>{playlist.name}</h1>
-          {/* TODO: make this actually work... more complex */}
           <p>
             This header is used for the description of the playlist
             <span className="and-more-link"> and more</span>
           </p>
-          {/* <h3>{artists}</h3> */}
-          {/* <div dangerouslySetInnerHTML={{ __html: playlist.description }} /> */}
           <div className="artist-album-info">
             <span className="playlist-creator">
               {playlist.owner.display_name} •
             </span>
             {/* TODO: look into the likes below */}
             <span className="playlist-likes">4,442,097 likes • </span>
-            <span className="track-total">{playlist.tracks.total} songs, </span>
-            {/* TODO: ??? look into this */}
+            <span className="playlist-track-total">
+              {playlist.tracks.total} songs •{" "}
+            </span>
             <span className="album-time-total">{duration}</span>
           </div>
         </div>

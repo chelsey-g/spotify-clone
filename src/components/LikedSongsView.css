@@ -19,6 +19,7 @@
   font-weight: 700;
   font-size: 0.75rem;
   align-items: flex-end;
+  padding-bottom: 5px;
 }
 
 .album-text p {
