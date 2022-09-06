@@ -23,7 +23,8 @@ export default function SideBarNav({ playlists }) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <AiOutlineSearch className="nav-icon" /> Search
+            <AiOutlineSearch className="nav-icon" />{" "}
+            <Link to="/search">Search</Link>
           </li>
           <li>
             <BiLibrary className="nav-icon" /> Your Library
