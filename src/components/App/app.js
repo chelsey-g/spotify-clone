@@ -9,6 +9,7 @@ import HomePage from "../../pages/HomePage";
 import PlaylistPage from "../../pages/PlaylistPage";
 import LikedSongsPage from "../../pages/LikedSongsPage";
 import SearchPage from "../../pages/SearchPage";
+import CategoriesPage from "../../pages/CategoriesPage";
 
 function App() {
   let token = useSpotify();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/collection/tracks" element={<LikedSongsPage />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
+        <Route path="/categories/:id" element={<CategoriesPage />} />
       </Routes>
     </div>
   );

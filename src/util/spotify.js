@@ -139,6 +139,16 @@ export function getBrowseCategories() {
   return request("https://api.spotify.com/v1/browse/categories");
 }
 
+export function getCategoryTitle(id) {
+  return request(`https://api.spotify.com/v1/browse/categories/${id}`);
+}
+
+export function getCategoryPlaylists(id) {
+  return request(
+    `https://api.spotify.com/v1/browse/categories/${id}/playlists`
+  );
+}
+
 export async function startPlayback(uri, deviceId = null) {
   if (!deviceId) {
     let res = await getAvailableDevices();

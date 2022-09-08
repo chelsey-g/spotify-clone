@@ -1,5 +1,6 @@
 import "./SearchView.css";
 import UserMenuButton from "./UserMenuButton";
+import { Link } from "react-router-dom";
 
 export default function SearchView(props) {
   let { categories } = props;
@@ -18,12 +19,15 @@ export default function SearchView(props) {
           <div className="categories-section">
             {categories.map((category) => {
               return (
-                <div className="category-item">
+                <Link
+                  className="category-item"
+                  to={`/categories/${category.id}`}
+                >
                   <img className="category-image" src={category.icons[0].url} />
                   <span className="category-name">
                     {category.name.replace("/", " / ")}
                   </span>
-                </div>
+                </Link>
               );
             })}
           </div>
