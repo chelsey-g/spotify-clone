@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { getSearchItems } from "../util/spotify";
-
+import { getBrowseCategories } from "../util/spotify";
 import MainBody from "../components/MainBody";
+import SearchView from "../components/SearchView";
 
 export default function SearchPage(props) {
-  const [albums, setAlbums] = useState([]);
+  const [categories, setCategories] = useState(null);
 
   useEffect(() => {
-    getSearchItems().then((data) => {
-      setAlbums(data.items.map((item) => item.album));
-    });
+    getBrowseCategories()
+      .then((data) => {
+        setCategories(data.categories.items);
+      })
+
+      .catch((err) => {
+        debugger;
+        console.log(err);
+      });
   }, []);
 
-  if (!albums) {
+  if (!categories) {
     return "Loading...";
   }
 
-  return <MainBody jumpBackInPlaylist={albums} forYouPlaylist={albums} />;
+  return <SearchView categories={categories} />;
 }

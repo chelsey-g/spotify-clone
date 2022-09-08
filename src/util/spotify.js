@@ -131,8 +131,12 @@ export function getUserProfile() {
   return request("https://api.spotify.com/v1/me");
 }
 
-export function getSearchItems() {
-  return request("https://api.spotify.com/v1/search");
+export function getSearchItems(q, type) {
+  return request(`https://api.spotify.com/v1/search?q=${q}&type=${type}`);
+}
+
+export function getBrowseCategories() {
+  return request("https://api.spotify.com/v1/browse/categories");
 }
 
 export async function startPlayback(uri, deviceId = null) {
