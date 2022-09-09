@@ -14,7 +14,6 @@ export default function Track(props) {
     month: "short",
     day: "2-digit",
   });
-
   const handleClick = () => {
     setHidden(!hidden);
   };
@@ -33,7 +32,10 @@ export default function Track(props) {
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       <div className="album-track-number">{props.index}</div>
-      <div className="album-art-track">{props.images}</div>
+      <img
+        className="album-art-track"
+        src={props.data.album.images[1].url}
+      ></img>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
