@@ -6,15 +6,6 @@ import { Link } from "react-router-dom";
 
 export default function MediumCard(props) {
   let { playlist } = props;
-  // const [otherClasses, setOtherClasses] = useState("");
-
-  // const handleClick = () => {
-  //   if (otherClasses !== "") {
-  //     setOtherClasses("");
-  //   } else {
-  //     setOtherClasses("card-highlighted");
-  //   }
-  // };
 
   if (!playlist) {
     return "Loading...";
@@ -22,8 +13,13 @@ export default function MediumCard(props) {
 
   let image = playlist?.images?.[1]?.url || playlist?.images?.[0]?.url;
 
+  let categoryURL = `/albums/${playlist.id}`;
+  if (playlist.type === "playlist") {
+    categoryURL = `/playlist/${playlist.id}`;
+  }
+
   return (
-    <Link to={`/albums/${playlist.id}`}>
+    <Link to={categoryURL}>
       <div className="medium-card">
         <div className="medium-card-header">
           <img className="playlist-img" src={image} alt="playlist art" />

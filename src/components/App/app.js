@@ -2,7 +2,6 @@ import "./app.css";
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSpotify, getPlaylists, Login } from "../../util/spotify";
-
 import SideBarNav from "../SideBarNav";
 import AlbumPage from "../../pages/AlbumPage";
 import HomePage from "../../pages/HomePage";
