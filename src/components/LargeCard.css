@@ -1,0 +1,31 @@
+.large-card {
+  background-image: linear-gradient(153deg, #592ef1, #877fe7);
+  width: 393px;
+  height: 275px;
+  border-radius: 10px;
+}
+
+.large-card-content-1 {
+  padding-top: 75px;
+  padding-left: 21px;
+}
+
+.large-card-artist {
+  padding-right: 3px;
+}
+
+.large-card-content-2 {
+  display: grid;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.large-card-track-title {
+  padding-right: 3px;
+  color: #cbbbfd;
+}
+
+.large-card-playlist-title {
+  font-size: 32px;
+  font-weight: bold;
+}
