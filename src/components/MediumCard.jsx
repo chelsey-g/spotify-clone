@@ -1,6 +1,5 @@
 import "./MediumCard.css";
 import PropTypes from "prop-types";
-// import { useState } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 

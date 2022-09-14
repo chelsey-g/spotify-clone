@@ -28,7 +28,7 @@ export default function SideBarNav({ playlists }) {
           </li>
           <li>
             <BiLibrary className="nav-icon" />{" "}
-            <Link to="/library">Your Library</Link>
+            <Link to="/collection/playlists">Your Library</Link>
           </li>
         </ol>
       </nav>

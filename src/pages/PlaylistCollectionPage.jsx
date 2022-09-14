@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { getSearchItems } from "../util/spotify";
 import { getBrowseCategories } from "../util/spotify";
 import MainBody from "../components/MainBody";
-import LibraryView from "../components/LibraryView";
+import PlaylistCollectionView from "../components/PlaylistCollectionView";
 
 export default function LibraryPage(props) {
   const [categories, setCategories] = useState(null);
@@ -22,5 +22,5 @@ export default function LibraryPage(props) {
     return "Loading...";
   }
 
-  return <LibraryView categories={categories} />;
+  return <PlaylistCollectionView categories={categories} />;
 }

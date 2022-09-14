@@ -1,0 +1,31 @@
+.library-view {
+  background-color: #121212;
+  width: 100%;
+  padding-left: 16px;
+}
+
+.library-view-tabs {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 135px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.library-playlist-tab,
+.library-artist-tab,
+.library-album-tab,
+.library-podcast-tab {
+  width: 91px;
+  height: 41px;
+}
+
+.library-playlist-tab:hover {
+  background-color: #333333;
+}
+.library-view-header {
+  padding-top: 88px;
+  padding-bottom: 21px;
+  font-size: 24px;
+  font-weight: bold;
+}

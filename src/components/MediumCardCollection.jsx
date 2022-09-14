@@ -1,6 +1,7 @@
 import { getCategoryPlaylists } from "../util/spotify";
 import MediumCard from "./MediumCard";
 import "./MediumCardCollection.css";
+import PropTypes from "prop-types";
 
 export default function MediumCardCollection({ playlists }) {
   return (
@@ -11,3 +12,7 @@ export default function MediumCardCollection({ playlists }) {
     </div>
   );
 }
+
+MediumCardCollection.propTypes = {
+  playlists: PropTypes.array.isRequired,
+};

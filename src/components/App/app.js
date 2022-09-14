@@ -9,7 +9,10 @@ import PlaylistPage from "../../pages/PlaylistPage";
 import LikedSongsPage from "../../pages/LikedSongsPage";
 import SearchPage from "../../pages/SearchPage";
 import CategoriesPage from "../../pages/CategoriesPage";
-import LibraryPage from "../../pages/LibraryPage";
+import PlaylistCollectionPage from "../../pages/PlaylistCollectionPage";
+import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
+import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
+import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
 
 function App() {
   let token = useSpotify();
@@ -40,7 +43,16 @@ function App() {
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
         <Route path="/categories/:id" element={<CategoriesPage />} />
-        <Route path="/library" element={<LibraryPage />} />
+        <Route
+          path="/collection/playlists"
+          element={<PlaylistCollectionPage />}
+        />
+        <Route
+          path="/collection/podcasts"
+          element={<PodcastCollectionPage />}
+        />
+        <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
+        <Route path="/collection/albums" element={<AlbumCollectionPage />} />
       </Routes>
     </div>
   );
