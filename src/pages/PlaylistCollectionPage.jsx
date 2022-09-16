@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 // import { getSearchItems } from "../util/spotify";
-import { getBrowseCategories } from "../util/spotify";
+import { getLikedSongs } from "../util/spotify";
 import MainBody from "../components/MainBody";
 import PlaylistCollectionView from "../components/PlaylistCollectionView";
 
-export default function LibraryPage(props) {
-  const [categories, setCategories] = useState(null);
+export default function PlaylistCollectionPage(props) {
+  const [likedSongs, setlikedSongs] = useState(null);
 
   useEffect(() => {
-    getBrowseCategories()
+    getLikedSongs()
       .then((data) => {
-        setCategories(data.categories.items);
+        setlikedSongs(data.items);
       })
 
       .catch((err) => {
@@ -18,9 +18,14 @@ export default function LibraryPage(props) {
       });
   }, []);
 
-  if (!categories) {
+  if (!likedSongs) {
     return "Loading...";
   }
 
-  return <PlaylistCollectionView categories={categories} />;
+  return (
+    <PlaylistCollectionView
+      likedSongs={likedSongs}
+      playlists={props.playlists}
+    />
+  );
 }

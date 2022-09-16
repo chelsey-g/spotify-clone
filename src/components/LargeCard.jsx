@@ -2,23 +2,26 @@ import "./LargeCard.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { AiFillPlayCircle } from "react-icons/ai";
+import { TrackChangesSharp } from "@material-ui/icons";
 
 export default function LargeCard(props) {
-  let { playlist } = props;
-
-  if (playlist) {
+  if (!props) {
     return "Loading...";
   }
 
   return (
     <div className="large-card">
-      <div className="large-card-content-1">
-        <div className="large-card-artist">Hello</div>
-        {/* <div className="large-card-track-title">{playlist.title}</div> */}
-        <div classname="large-card-content-2">
-          <span className="large-card-playlist-title">Liked Songs</span>
-          <span className="large-card-playlist-track-count">164 songs</span>
-        </div>
+      <div className="track-info">
+        {props.likedSongs.map((song) => (
+          <span className="largecard-artistname">
+            {song.track.artists[0].name}
+            <span className="largecard-trackname">{song.track.name}</span> •
+          </span>
+        ))}
+      </div>
+      <div className="largecard-playlistinfo">Liked Songs</div>
+      <div className="largecard-totaltracks">
+        {props.likedSongs.length} liked songs
       </div>
     </div>
   );

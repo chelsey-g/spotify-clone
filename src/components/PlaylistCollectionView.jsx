@@ -1,36 +1,25 @@
 import "./PlaylistCollectionView.css";
 import UserMenuButton from "./UserMenuButton";
-import { Link } from "react-router-dom";
 import LargeCard from "./LargeCard";
-// import MediumCardCollection from "./MediumCardCollection";
+import LibraryTabNav from "./LibraryTabNav";
+import LeftArrowButton from "./LeftArrowButton";
+import RightArrowButton from "./RightArrowButton";
+import MediumCardCollection from "./MediumCardCollection";
 
-export default function LibraryView(props) {
-  let { playlist } = props;
-
-  if (!playlist) {
-    return "Loading...";
-  }
-
+export default function PlaylistCollectionView(props) {
   return (
     <div className="library-view">
-      <div className="library-view-tabs">
-        <div className="library-playlist-tab">Playlists</div>
-        <div className="library-podcast-tab">Podcasts</div>
-        <div className="library-artist-tab">Artists</div>
-        <div className="library-album-tab">Albums</div>
+      <div className="library-view-header">
+        <div className="left-right-arrows">
+          <LeftArrowButton />
+          <RightArrowButton />
+          <LibraryTabNav />
+          <UserMenuButton />
+        </div>
       </div>
-      <div className="library-view-header">Playlists</div>
-      <div className="library-view-content">
-        <LargeCard />
-        {/* <MediumCardCollection /> */}
-      </div>
+      <div className="library-view-title-header">Playlists</div>
+      <LargeCard playlistName="Liked Songs" likedSongs={props.likedSongs} />
+      <MediumCardCollection playlists={props.playlists} />
     </div>
   );
 }
-
-// page gets data
-// page loads page view which is made of a bunch of components
-// pass data into all the components
-
-// presentational components
-// container components

@@ -4,6 +4,12 @@
   padding-left: 16px;
 }
 
+.library-view-header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
 .library-view-tabs {
   display: flex;
   padding-top: 30px;
@@ -23,7 +29,8 @@
 .library-playlist-tab:hover {
   background-color: #333333;
 }
-.library-view-header {
+.library-view-title-header {
+  display: flex;
   padding-top: 88px;
   padding-bottom: 21px;
   font-size: 24px;

@@ -5,27 +5,35 @@
   border-radius: 10px;
 }
 
-.large-card-content-1 {
-  padding-top: 75px;
-  padding-left: 21px;
-}
-
-.large-card-artist {
+.largecard-artistname {
+  font-size: 16px;
+  color: #ffffff;
   padding-right: 3px;
 }
 
-.large-card-content-2 {
-  display: grid;
-  padding-bottom: 50px;
-  width: 100%;
+.largecard-trackname {
+  font-size: 16px;
+  color: #b3b3b3;
+  padding-left: 3px;
+  padding-bottom: 10px;
 }
 
-.large-card-track-title {
-  padding-right: 3px;
-  color: #cbbbfd;
+.track-info {
+  width: 362px;
+  height: 59px;
+  overflow: hidden;
+  padding: 21px;
+  padding-top: 60px;
 }
 
-.large-card-playlist-title {
+.largecard-playlistinfo {
   font-size: 32px;
   font-weight: bold;
+  padding-top: 40px;
+  padding-left: 21px;
+  padding-bottom: 28px;
+}
+
+.largecard-totaltracks {
+  padding-left: 21px;
 }

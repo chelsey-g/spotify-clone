@@ -45,14 +45,14 @@ function App() {
         <Route path="/categories/:id" element={<CategoriesPage />} />
         <Route
           path="/collection/playlists"
-          element={<PlaylistCollectionPage />}
+          element={<PlaylistCollectionPage playlists={playlists} />}
         />
-        <Route
+        {/* <Route
           path="/collection/podcasts"
           element={<PodcastCollectionPage />}
         />
         <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
-        <Route path="/collection/albums" element={<AlbumCollectionPage />} />
+        <Route path="/collection/albums" element={<AlbumCollectionPage />} /> */}
       </Routes>
     </div>
   );
