@@ -2,10 +2,9 @@ import "./PlaylistView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
-
 import { AiOutlineClockCircle } from "react-icons/ai";
-
 import MenuNav from "./MenuNav";
+import PropTypes from "prop-types";
 
 export default function PlaylistView(props) {
   let { playlist, tracks } = props;
@@ -14,6 +13,7 @@ export default function PlaylistView(props) {
     return "Loading...";
   }
 
+<<<<<<< HEAD
   // // TODO: learn more about this
   // let artists = playlist.tracks.items
   //   .map((item) => item.track.artists.map((artist) => artist.name))
@@ -23,6 +23,8 @@ export default function PlaylistView(props) {
   // get year from abum release date
   // const year = playlist.release_date.split("-")[0];
 
+=======
+>>>>>>> e692defc6626807944408be990c609dfa2e338ef
   function formatDuration(duration) {
     var seconds = Math.floor((duration / 1000) % 60);
     var minutes = Math.floor((duration / (1000 * 60)) % 60);
@@ -41,8 +43,6 @@ export default function PlaylistView(props) {
     }
 
     return result;
-    // return { hours, minutes, seconds };
-    // return `${hours} hours, ${minutes} minutes, ${seconds} seconds `
   }
 
   const duration_ms = playlist.tracks.items.reduce((acc, curr) => {
@@ -50,11 +50,6 @@ export default function PlaylistView(props) {
   }, 0);
 
   let duration = formatDuration(duration_ms);
-
-  // import { useState } from "react";
-  // props.tracks.items.sort(function (a, b) {
-  //   return a.track.track_number - b.track.track_number;
-  // });
 
   return (
     <div className="album-info">
@@ -103,6 +98,7 @@ export default function PlaylistView(props) {
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
             <div className="plylist-album-title">ALBUM</div>
+            <div className="date-added">DATE ADDED</div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
@@ -114,6 +110,7 @@ export default function PlaylistView(props) {
                   key={item.track.id}
                   album={item.track.album}
                   index={index + 1}
+                  date_added={item.added_at}
                 />
               ))}
             </div>
@@ -124,3 +121,8 @@ export default function PlaylistView(props) {
     </div>
   );
 }
+
+PlaylistView.propTypes = {
+  playlist: PropTypes.object,
+  tracks: PropTypes.object,
+};

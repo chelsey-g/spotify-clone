@@ -1,27 +1,46 @@
 import "./SearchView.css";
-import MenuNav from "./MenuNav";
+import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 export default function SearchView(props) {
-    let { album, tracks } = props;
+  let { categories } = props;
 
-    if (!album || !tracks) {
-      return "Loading...";
-    }
+  if (!categories) {
+    return "Loading...";
+  }
 
   return (
-    <div className="search-view">
-      <div className="search-view-header">
-        <h1>Recent Searches</h1>
-        <div class="recent-searches">
-            {/* insert medium cards here */}
-      </div>
-      <div className="search-view-content">
-        <div className="search-view-options">
-          <div className="search-view-buttons">
-            <MenuNav />
+    <div className="search-page">
+      <div className="search-header">
+        <div className="search-header-right"></div>
+        <div className="search-info">
+          <span className="search-title-header">Browse All</span>
+
+          <div className="categories-section">
+            {categories.map((category) => {
+              return (
+                <Link
+                  className="category-item"
+                  to={`/categories/${category.id}`}
+                >
+                  <img
+                    className="category-image"
+                    alt="category-art"
+                    src={category.icons[0].url}
+                  />
+                  <span className="category-name">
+                    {category.name.replace("/", " / ")}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+SearchView.propTypes = {
+  categories: PropTypes.array,
+};

@@ -2,25 +2,25 @@ import { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 export default function RightArrowButton(props) {
-  const [RightArrowClass, setRightArrowClass] = useState("");
+  const [rightArrowClass, setrightArrowClass] = useState("");
   const handleButtonClick = () => {
-    if (RightArrowClass !== "") {
-      setRightArrowClass("");
+    if (rightArrowClass !== "") {
+      setrightArrowClass("");
     } else {
-      setRightArrowClass("button-highlighted");
+      setrightArrowClass("button-highlighted");
     }
   };
 
   return (
     <span
-      className={`right-arrow-button ${RightArrowClass}`}
+      className={`right-arrow-button ${rightArrowClass}`}
       onClick={handleButtonClick}
     >
       <IoIosArrowDroprightCircle
         size={37}
-        className={`right-arrow-button ${RightArrowClass}`}
+        className={`right-arrow-button ${rightArrowClass}`}
         onClick={handleButtonClick}
-        color="black"
+        color="white"
       ></IoIosArrowDroprightCircle>{" "}
     </span>
   );

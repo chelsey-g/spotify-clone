@@ -6,6 +6,7 @@ import { AiOutlinePlusSquare } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiLibrary } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 export default function SideBarNav({ playlists }) {
   return (
@@ -27,7 +28,8 @@ export default function SideBarNav({ playlists }) {
             <Link to="/search">Search</Link>
           </li>
           <li>
-            <BiLibrary className="nav-icon" /> Your Library
+            <BiLibrary className="nav-icon" />{" "}
+            <Link to="/collection/playlists">Your Library</Link>
           </li>
         </ol>
       </nav>
@@ -67,3 +69,7 @@ export default function SideBarNav({ playlists }) {
     </div>
   );
 }
+
+SideBarNav.propTypes = {
+  playlists: PropTypes.array,
+};
