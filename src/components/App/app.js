@@ -2,13 +2,17 @@ import "./app.css";
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSpotify, getPlaylists, Login } from "../../util/spotify";
-
 import SideBarNav from "../SideBarNav";
 import AlbumPage from "../../pages/AlbumPage";
 import HomePage from "../../pages/HomePage";
 import PlaylistPage from "../../pages/PlaylistPage";
 import LikedSongsPage from "../../pages/LikedSongsPage";
 import SearchPage from "../../pages/SearchPage";
+import CategoriesPage from "../../pages/CategoriesPage";
+import PlaylistCollectionPage from "../../pages/PlaylistCollectionPage";
+// import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
+// import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
+// import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
 
 function App() {
   let token = useSpotify();
@@ -38,6 +42,17 @@ function App() {
         <Route path="/collection/tracks" element={<LikedSongsPage />} />
         <Route path="/albums/:id" element={<AlbumPage />} />
         <Route path="/playlist/:id" element={<PlaylistPage />} />
+        <Route path="/categories/:id" element={<CategoriesPage />} />
+        <Route
+          path="/collection/playlists"
+          element={<PlaylistCollectionPage playlists={playlists} />}
+        />
+        {/* <Route
+          path="/collection/podcasts"
+          element={<PodcastCollectionPage />}
+        />
+        <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
+        <Route path="/collection/albums" element={<AlbumCollectionPage />} /> */}
       </Routes>
     </div>
   );

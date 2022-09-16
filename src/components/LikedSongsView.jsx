@@ -2,10 +2,9 @@ import "./LikedSongsView.css";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { ListItemSecondaryAction } from "@material-ui/core";
 
 export default function LikedSongsView(props) {
-  let { totalTracks, tracks, artistName } = props;
+  let { totalTracks, tracks } = props;
 
   if (!tracks) {
     return "Loading...";
@@ -25,7 +24,7 @@ export default function LikedSongsView(props) {
           <div className="artist-album-info">
             <img
               className="likedsongs-profpic"
-              alt="profile picture"
+              alt="profile art"
               src="https://tinyurl.com/mwdzt52n"
             ></img>
             <span className="likedsongs-username">Chelsey Gowac •</span>

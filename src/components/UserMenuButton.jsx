@@ -1,25 +1,28 @@
-import "./UserMenuButton.css"
-import { useState } from "react"
-import { Login } from "../util/spotify"
-import useLocalStorage from "../hooks/useLocalStorage"
-import { IoMdArrowDropdown } from "react-icons/io"
-import { MdOutlineOpenInNew } from "react-icons/md"
-import { IoMdArrowDropup } from "react-icons/io"
+import "./UserMenuButton.css";
+import { useState } from "react";
+import { Login } from "../util/spotify";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { MdOutlineOpenInNew } from "react-icons/md";
+import { IoMdArrowDropup } from "react-icons/io";
 
 export default function UserMenuButton(props) {
-  const [hidden, setHidden] = useState(true)
-  const [token, setToken] = useLocalStorage("token", window.localStorage.getItem('token'));
+  const [hidden, setHidden] = useState(true);
+  const [token] = useLocalStorage(
+    "token",
+    window.localStorage.getItem("token")
+  );
 
   const handleClick = () => {
-    setHidden(!hidden)
-  }
+    setHidden(!hidden);
+  };
 
   return (
     <>
       {token ? (
         <div className="user-menu-button-cont">
           <div className="user-menu-image" onClick={handleClick}>
-            <img src="https://tinyurl.com/mvkkvyd2" alt="user art" />
+            <img src="https://tinyurl.com/3825xbnt" alt="user art" />
             Chelsey Gowac
             {/* {hidden && <IoMdArrowDropdown />}
         {!hidden && <IoMdArrowDropup />} */}
@@ -48,5 +51,5 @@ export default function UserMenuButton(props) {
         <Login />
       )}
     </>
-  )
+  );
 }
