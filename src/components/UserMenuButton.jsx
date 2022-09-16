@@ -8,7 +8,7 @@ import { IoMdArrowDropup } from "react-icons/io";
 
 export default function UserMenuButton(props) {
   const [hidden, setHidden] = useState(true);
-  const [token, setToken] = useLocalStorage(
+  const [token] = useLocalStorage(
     "token",
     window.localStorage.getItem("token")
   );

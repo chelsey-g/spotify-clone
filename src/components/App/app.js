@@ -10,9 +10,9 @@ import LikedSongsPage from "../../pages/LikedSongsPage";
 import SearchPage from "../../pages/SearchPage";
 import CategoriesPage from "../../pages/CategoriesPage";
 import PlaylistCollectionPage from "../../pages/PlaylistCollectionPage";
-import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
-import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
-import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
+// import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
+// import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
+// import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
 
 function App() {
   let token = useSpotify();

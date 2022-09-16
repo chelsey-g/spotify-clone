@@ -1,7 +1,7 @@
 import "./Track.css";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { RiArrowRightSFill, RiOpenSourceFill } from "react-icons/ri";
+import { RiArrowRightSFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
 import PropTypes from "prop-types";
 
