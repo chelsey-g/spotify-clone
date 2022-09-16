@@ -2,12 +2,13 @@
   background-color: #121212;
   width: 100%;
   padding-left: 16px;
+  padding: 21px;
 }
 
 .library-view-header {
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  align-items: center;
 }
 
 .library-view-tabs {
@@ -28,11 +29,18 @@
 
 .library-playlist-tab:hover {
   background-color: #333333;
+  border-radius: 3px;
 }
 .library-view-title-header {
   display: flex;
-  padding-top: 88px;
+  padding-top: 50px;
   padding-bottom: 21px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.playlist-view-content {
+  display: grid;
+  grid-gap: 24px;
+  column-count: 4;
 }

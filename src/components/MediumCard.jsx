@@ -12,6 +12,8 @@ export default function MediumCard(props) {
 
   let image = playlist?.images?.[1]?.url || playlist?.images?.[0]?.url;
 
+  let description = playlist.description || "";
+
   let categoryURL = `/albums/${playlist.id}`;
   if (playlist.type === "playlist") {
     categoryURL = `/playlist/${playlist.id}`;
@@ -29,6 +31,10 @@ export default function MediumCard(props) {
           ></AiFillPlayCircle>
         </div>
         <div className="playlist-name">{playlist.name}</div>
+        <div
+          className="playlist-description"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
         <div className="card-artist">
           {playlist?.artists?.map((artist) => artist.name).join(", ")}
         </div>

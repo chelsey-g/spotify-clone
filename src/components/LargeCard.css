@@ -1,8 +1,9 @@
 .large-card {
   background-image: linear-gradient(153deg, #592ef1, #877fe7);
-  width: 393px;
-  height: 275px;
-  border-radius: 10px;
+  width: 444px;
+  height: 282px;
+  border-radius: 5px;
+  margin-right: 13px;
 }
 
 .largecard-artistname {
@@ -19,7 +20,7 @@
 }
 
 .track-info {
-  width: 362px;
+  width: 390px;
   height: 59px;
   overflow: hidden;
   padding: 21px;

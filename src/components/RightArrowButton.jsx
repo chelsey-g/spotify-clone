@@ -20,7 +20,7 @@ export default function RightArrowButton(props) {
         size={37}
         className={`right-arrow-button ${RightArrowClass}`}
         onClick={handleButtonClick}
-        color="black"
+        color="white"
       ></IoIosArrowDroprightCircle>{" "}
     </span>
   );

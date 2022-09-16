@@ -7,19 +7,29 @@ import RightArrowButton from "./RightArrowButton";
 import MediumCardCollection from "./MediumCardCollection";
 
 export default function PlaylistCollectionView(props) {
+  let leadingCard = (
+    <LargeCard playlistName="Liked Songs" likedSongs={props.likedSongs} />
+  );
+
   return (
     <div className="library-view">
       <div className="library-view-header">
-        <div className="left-right-arrows">
+        <div className="playlist-arrows-nav">
           <LeftArrowButton />
           <RightArrowButton />
-          <LibraryTabNav />
-          <UserMenuButton />
         </div>
+        <div className="playlist-tab-nav">
+          <LibraryTabNav />
+        </div>
+        <UserMenuButton />
       </div>
       <div className="library-view-title-header">Playlists</div>
-      <LargeCard playlistName="Liked Songs" likedSongs={props.likedSongs} />
-      <MediumCardCollection playlists={props.playlists} />
+      <div className="playlist-view-content">
+        <MediumCardCollection
+          playlists={props.playlists}
+          leadingCard={leadingCard}
+        />
+      </div>
     </div>
   );
 }

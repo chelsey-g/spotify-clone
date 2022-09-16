@@ -16,7 +16,7 @@ export default function LeftArrowButton(props) {
       className={`left-arrow-button ${LeftArrowClass}`}
       onClick={handleButtonClick}
     >
-      <IoIosArrowDropleftCircle color="#000000" size={37} />
+      <IoIosArrowDropleftCircle color="#FFFFFF" size={37} />
     </span>
   );
 }
