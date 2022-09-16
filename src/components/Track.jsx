@@ -35,6 +35,7 @@ export default function Track(props) {
       <img
         className="album-art-track"
         src={props.data.album.images[1].url}
+        alt="album-art"
       ></img>
       <div className="album-track-name">
         {props.data.name}

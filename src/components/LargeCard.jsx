@@ -1,8 +1,5 @@
 import "./LargeCard.css";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { AiFillPlayCircle } from "react-icons/ai";
-import { TrackChangesSharp } from "@material-ui/icons";
 
 export default function LargeCard(props) {
   if (!props) {

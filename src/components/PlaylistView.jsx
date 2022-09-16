@@ -1,5 +1,4 @@
 import "./PlaylistView.css";
-import { useState } from "react";
 import Track from "./Track";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -13,11 +12,6 @@ export default function PlaylistView(props) {
   if (!playlist || !tracks) {
     return "Loading...";
   }
-
-  let artists = playlist.tracks.items
-    .map((item) => item.track.artists.map((artist) => artist.name))
-    .flat()
-    .join(", ");
 
   function formatDuration(duration) {
     var seconds = Math.floor((duration / 1000) % 60);

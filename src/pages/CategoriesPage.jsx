@@ -6,13 +6,12 @@ import CategoriesView from "../components/CategoriesView";
 
 export default function CategoriesPage(props) {
   const { id } = useParams();
-  const [CategoryType, setCategoryType] = useState();
-  const [CategoryPlaylists, setCategoryPlaylists] = useState();
+  const [categoryType, setCategoryType] = useState();
+  const [categoryPlaylists, setCategoryPlaylists] = useState();
 
   useEffect(() => {
     getCategoryTitle(id)
       .then((data) => {
-        console.log("data loaded 1");
         setCategoryType(data);
       })
       .catch((err) => {
@@ -23,8 +22,6 @@ export default function CategoriesPage(props) {
   useEffect(() => {
     getCategoryPlaylists(id)
       .then((data) => {
-        console.log("data loaded");
-
         setCategoryPlaylists(data.playlists.items);
       })
       .catch((err) => {
@@ -32,18 +29,18 @@ export default function CategoriesPage(props) {
       });
   }, [id]);
 
-  if (!CategoryType) {
+  if (!categoryType) {
     return "Loading...";
   }
 
-  if (!CategoryPlaylists) {
+  if (!categoryPlaylists) {
     return "Loading...";
   }
 
   return (
     <CategoriesView
-      CategoryType={CategoryType}
-      CategoryPlaylists={CategoryPlaylists}
+      CategoryType={categoryType}
+      CategoryPlaylists={categoryPlaylists}
     />
   );
 }

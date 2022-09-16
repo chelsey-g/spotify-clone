@@ -1,4 +1,3 @@
-import { getCategoryPlaylists } from "../util/spotify";
 import MediumCard from "./MediumCard";
 import "./MediumCardCollection.css";
 import PropTypes from "prop-types";

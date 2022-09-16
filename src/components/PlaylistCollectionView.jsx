@@ -5,6 +5,7 @@ import LibraryTabNav from "./LibraryTabNav";
 import LeftArrowButton from "./LeftArrowButton";
 import RightArrowButton from "./RightArrowButton";
 import MediumCardCollection from "./MediumCardCollection";
+import { PropTypes } from "prop-types";
 
 export default function PlaylistCollectionView(props) {
   let leadingCard = (
@@ -33,3 +34,8 @@ export default function PlaylistCollectionView(props) {
     </div>
   );
 }
+
+PlaylistCollectionView.propTypes = {
+  playlists: PropTypes.array,
+  likedSongs: PropTypes.array,
+};

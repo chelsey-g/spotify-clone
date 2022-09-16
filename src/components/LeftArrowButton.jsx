@@ -2,18 +2,18 @@ import { useState } from "react";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 
 export default function LeftArrowButton(props) {
-  const [LeftArrowClass, setLeftArrowClass] = useState("");
+  const [leftArrowClass, setleftArrowClass] = useState("");
   const handleButtonClick = () => {
-    if (LeftArrowClass !== "") {
-      setLeftArrowClass("");
+    if (leftArrowClass !== "") {
+      setleftArrowClass("");
     } else {
-      setLeftArrowClass("button-highlighted");
+      setleftArrowClass("button-highlighted");
     }
   };
 
   return (
     <span
-      className={`left-arrow-button ${LeftArrowClass}`}
+      className={`left-arrow-button ${leftArrowClass}`}
       onClick={handleButtonClick}
     >
       <IoIosArrowDropleftCircle color="#FFFFFF" size={37} />
