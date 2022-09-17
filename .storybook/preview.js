@@ -1,4 +1,7 @@
 import "../src/index.css";
+import { withRouter } from 'storybook-addon-react-router-v6';
+
+export const decorators = [withRouter];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
