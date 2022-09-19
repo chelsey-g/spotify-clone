@@ -27,7 +27,7 @@ export default function AlbumView(props) {
         <img
           alt="cover art"
           className="album-image"
-          src={props.data.images[0].url}
+          src={album.images[0].url}
         />
         <div className="album-text">
           <p>Album</p>

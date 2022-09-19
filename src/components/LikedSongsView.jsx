@@ -24,11 +24,7 @@ export default function LikedSongsView(props) {
           <div className="artist-album-info">
             <img
               className="likedsongs-profpic"
-<<<<<<< HEAD
-              alt="liked-songs art"
-=======
               alt="profile art"
->>>>>>> e692defc6626807944408be990c609dfa2e338ef
               src="https://tinyurl.com/mwdzt52n"
             ></img>
             <span className="likedsongs-username">Chelsey Gowac •</span>

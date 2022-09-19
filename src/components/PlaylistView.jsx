@@ -13,18 +13,6 @@ export default function PlaylistView(props) {
     return "Loading...";
   }
 
-<<<<<<< HEAD
-  // // TODO: learn more about this
-  // let artists = playlist.tracks.items
-  //   .map((item) => item.track.artists.map((artist) => artist.name))
-  //   .flat()
-  //   .join(", ");
-
-  // get year from abum release date
-  // const year = playlist.release_date.split("-")[0];
-
-=======
->>>>>>> e692defc6626807944408be990c609dfa2e338ef
   function formatDuration(duration) {
     var seconds = Math.floor((duration / 1000) % 60);
     var minutes = Math.floor((duration / (1000 * 60)) % 60);
