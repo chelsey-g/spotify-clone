@@ -1,7 +1,7 @@
 import "./Track.css";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { RiArrowRightSFill } from "react-icons/ri";
+import { RiArrowRightSFill, RiOpenSourceFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
 import PropTypes from "prop-types";
 
@@ -14,6 +14,7 @@ export default function Track(props) {
     month: "short",
     day: "2-digit",
   });
+
   const handleClick = () => {
     setHidden(!hidden);
   };
@@ -32,15 +33,11 @@ export default function Track(props) {
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       <div className="album-track-number">{props.index}</div>
-      <img
-        className="album-art-track"
-        src={props.data.album.images[1].url}
-        alt="album-art"
-      ></img>
+      <div className="album-art-track">{props.images}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
-        <div className="artist-name-track">{props.album.artists[0].name}</div>
+        <div className="artist-name-track">{props.data.artists[0].name}</div>
       </div>
       <div className="album-name">{props.album.name}</div>
       <div className="likedsongs-dateadded">{dateFormat}</div>
@@ -84,4 +81,5 @@ Track.propTypes = {
   data: PropTypes.object.isRequired,
   album: PropTypes.object.isRequired,
   date_added: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
