@@ -7,6 +7,7 @@ import MenuNav from "./MenuNav";
 import Proptypes from "prop-types";
 
 export default function AlbumView(props) {
+  let mode = "album";
   let { album, tracks } = props;
 
   if (!album || !tracks) {
@@ -62,7 +63,7 @@ export default function AlbumView(props) {
           <div className="albumview-tracks-header">
             <div className="track-number">#</div>
             <div className="track-title">TITLE</div>
-            <div className="track-releasedate">RELEASE DATE</div>
+            <div className="track-releasedate"></div>
             <div className="track-duration">
               <AiOutlineClockCircle color="#b3b3b3" size={20} />
             </div>
@@ -70,6 +71,7 @@ export default function AlbumView(props) {
             <div className="album-tracks">
               {props.tracks.map((item, index) => (
                 <Track
+                  mode={mode}
                   data={item}
                   key={item.id}
                   album={album.name}

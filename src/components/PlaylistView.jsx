@@ -7,6 +7,7 @@ import MenuNav from "./MenuNav";
 import PropTypes from "prop-types";
 
 export default function PlaylistView(props) {
+  let mode = "playlist";
   let { playlist, tracks } = props;
 
   if (!playlist || !tracks) {
@@ -94,6 +95,7 @@ export default function PlaylistView(props) {
             <div className="album-tracks">
               {props.tracks.items.map((item, index) => (
                 <Track
+                  mode={mode}
                   data={item.track}
                   key={item.track.id}
                   album={item.track.album}

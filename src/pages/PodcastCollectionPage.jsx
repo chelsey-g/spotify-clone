@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getMyPodcasts } from "../util/spotify";
-import PlaylistCollectionView from "../components/PlaylistCollectionView";
+import PodcastCollectionView from "../components/PlaylistCollectionView";
+import PropTypes from "prop-types";
 
 export default function PodcastCollectionPage(props) {
-  const [myPodcasts, setMyPodcasts] = useState(null);
+  const [podcasts, setPodcasts] = useState(null);
 
   useEffect(() => {
     getMyPodcasts()
       .then((data) => {
-        setMyPodcasts(data.items);
+        setPodcasts(data.items);
       })
 
       .catch((err) => {
@@ -16,9 +17,13 @@ export default function PodcastCollectionPage(props) {
       });
   }, []);
 
-  if (!myPodcasts) {
+  if (!podcasts) {
     return "Loading...";
   }
 
-  return <PlaylistCollectionView myPodcasts={myPodcasts} />;
+  return <PodcastCollectionView podcasts={podcasts} />;
 }
+
+PodcastCollectionPage.propTypes = {
+  podcasts: PropTypes.array,
+};
