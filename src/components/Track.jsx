@@ -14,6 +14,7 @@ export default function Track(props) {
     month: "short",
     day: "2-digit",
   });
+
   const handleClick = () => {
     setHidden(!hidden);
   };
@@ -29,21 +30,34 @@ export default function Track(props) {
   duration_sec = duration_sec < 10 ? "0" + duration_sec : duration_sec;
   duration = duration_min + ":" + duration_sec;
 
+  let albumTrackArt;
+  if (props.mode === "album") {
+    albumTrackArt = "";
+  } else {
+    albumTrackArt = (
+      <img
+        className="album-art-track"
+        src={props.data.album.images[2].url}
+        alt="album art"
+      />
+    );
+  }
+
   return (
     <div className="album-tracks-info" onClick={() => play(props.data.uri)}>
       <div className="album-track-number">{props.index}</div>
-      <img
-        className="album-art-track"
-        src={props.data.album.images[1].url}
-        alt="album-art"
-      ></img>
+      <div className="album-art-track">{albumTrackArt}</div>
       <div className="album-track-name">
         {props.data.name}
         <span className="album-track-artist">{props.data.artist}</span>
-        <div className="artist-name-track">{props.album.artists[0].name}</div>
+        <div className="artist-name-track">
+          {props.mode === "playlist" && props.data.artists[0].name}
+        </div>
       </div>
       <div className="album-name">{props.album.name}</div>
-      <div className="likedsongs-dateadded">{dateFormat}</div>
+      <div className="likedsongs-dateadded">
+        {props.mode === "playlist" && dateFormat}
+      </div>
       <div className="album-track-duration">{duration} </div>
       <div className="album-track-menu">
         <BsThreeDots onClick={handleClick} className="track-button" />
@@ -81,7 +95,14 @@ export default function Track(props) {
 }
 
 Track.propTypes = {
+  mode: PropTypes.string,
   data: PropTypes.object.isRequired,
   album: PropTypes.object.isRequired,
   date_added: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
+
+// props.mode
+
+// mode == "album", not show artist, date added
+// mode == 'playlist', show artist, date added
