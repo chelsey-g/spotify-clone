@@ -1,6 +1,6 @@
 import "./PlaylistCollectionView.css";
 import UserMenuButton from "./UserMenuButton";
-import LargeCard from "./LargeCard";
+import PlaylistLargeCard from "./PlaylistLargeCard";
 import LibraryTabNav from "./LibraryTabNav";
 import LeftArrowButton from "./LeftArrowButton";
 import RightArrowButton from "./RightArrowButton";
@@ -9,7 +9,10 @@ import { PropTypes } from "prop-types";
 
 export default function PlaylistCollectionView(props) {
   let leadingCard = (
-    <LargeCard playlistName="Liked Songs" likedSongs={props.likedSongs} />
+    <PlaylistLargeCard
+      playlistName="Liked Songs"
+      likedSongs={props.likedSongs}
+    />
   );
 
   return (

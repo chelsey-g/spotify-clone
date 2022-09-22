@@ -1,4 +1,4 @@
-.large-card {
+.playlist-large-card {
   background-image: linear-gradient(153deg, #592ef1, #877fe7);
   width: 444px;
   height: 282px;
@@ -6,20 +6,20 @@
   margin-right: 13px;
 }
 
-.largecard-artistname {
+.playlist-largecard-artistname {
   font-size: 16px;
   color: #ffffff;
   padding-right: 3px;
 }
 
-.largecard-trackname {
+.playlist-largecard-trackname {
   font-size: 16px;
   color: #b3b3b3;
   padding-left: 3px;
   padding-bottom: 10px;
 }
 
-.track-info {
+.playlist-largecard-track-info {
   width: 390px;
   height: 59px;
   overflow: hidden;
@@ -27,7 +27,7 @@
   padding-top: 60px;
 }
 
-.largecard-playlistinfo {
+.playlist-largecard-playlistinfo {
   font-size: 32px;
   font-weight: bold;
   padding-top: 40px;
@@ -35,6 +35,6 @@
   padding-bottom: 28px;
 }
 
-.largecard-totaltracks {
+.playlist-largecard-totaltracks {
   padding-left: 21px;
 }
