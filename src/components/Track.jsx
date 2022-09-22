@@ -1,7 +1,7 @@
 import "./Track.css";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import { RiArrowRightSFill, RiOpenSourceFill } from "react-icons/ri";
+import { RiArrowRightSFill } from "react-icons/ri";
 import { startPlayback } from "../util/spotify";
 import PropTypes from "prop-types";
 
@@ -35,7 +35,11 @@ export default function Track(props) {
     albumTrackArt = "";
   } else {
     albumTrackArt = (
-      <img className="album-art-track" src={props.data.album.images[2].url} />
+      <img
+        className="album-art-track"
+        src={props.data.album.images[2].url}
+        alt="album art"
+      />
     );
   }
 
