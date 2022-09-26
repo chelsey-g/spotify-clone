@@ -5,6 +5,7 @@ import PodcastLargeCard from "./PodcastLargeCard";
 import LibraryTabNav from "./LibraryTabNav";
 import LeftArrowButton from "./LeftArrowButton";
 import RightArrowButton from "./RightArrowButton";
+import PropTypes from "prop-types";
 
 export default function PodcastCollectionView(props) {
   let leadingPodcastCard = (
@@ -33,3 +34,7 @@ export default function PodcastCollectionView(props) {
     </div>
   );
 }
+
+PodcastCollectionView.propTypes = {
+  episodes: PropTypes.array,
+};
