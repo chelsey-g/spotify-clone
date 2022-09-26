@@ -116,7 +116,11 @@ export function getMyAlbums() {
 }
 
 export function getMyPodcasts() {
-  return request(`https://api.spotify.com/v1/me/episodes`);
+  return request(`https://api.spotify.com/v1/me/shows`);
+}
+
+export function getMyEpisodes() {
+  return request(`https://api.spotify.com/v1/me/episodes/contains`);
 }
 
 export function getAlbum(id) {

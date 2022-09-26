@@ -1,0 +1,46 @@
+.library-view {
+  background-color: #121212;
+  width: 100%;
+  padding-left: 16px;
+  padding: 21px;
+}
+
+.library-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.library-view-tabs {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 135px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.library-playlist-tab,
+.library-artist-tab,
+.library-album-tab,
+.library-podcast-tab {
+  width: 91px;
+  height: 41px;
+}
+
+.library-playlist-tab:hover {
+  background-color: #333333;
+  border-radius: 3px;
+}
+.library-view-title-header {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 21px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.playlist-view-content {
+  display: grid;
+  grid-gap: 24px;
+  column-count: 4;
+}

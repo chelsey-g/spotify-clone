@@ -1,0 +1,26 @@
+.podcast-large-card {
+  background-image: linear-gradient(153deg, #01654e, #238167);
+  width: 444px;
+  height: 282px;
+  border-radius: 5px;
+  margin-right: 13px;
+}
+
+.podcast-largecard-info {
+  font-size: 16px;
+  color: #ffffff;
+  padding-right: 3px;
+}
+
+.podcast-largecard-title {
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 177px;
+  padding-left: 21px;
+  padding-bottom: 28px;
+}
+
+.podcast-largecard-episodes {
+  padding-left: 21px;
+  font-weight: bold;
+}
