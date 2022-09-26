@@ -1,0 +1,50 @@
+.medium-card {
+  width: 180px;
+  height: 260px;
+  background-color: #171717;
+  padding: 18px;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-highlighted {
+  border: 5px solid purple;
+}
+
+.medium-card-header {
+  position: relative;
+}
+
+.medium-card:hover .play-btn {
+  color: white;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.medium-card .play-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  margin: 5px;
+  transform: translateY(50%);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.podcast-img {
+  width: 100%;
+}
+
+.podcast-artist {
+  color: grey;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.podcast-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
