@@ -29,6 +29,6 @@ export default function ArtistsCollectionPage(props) {
   );
 }
 
-ArtistsCollectionPage.propTypes = {
-  followedArtists: PropTypes.array,
+ArtistsCollectionPage.PropTypes = {
+  artists: PropTypes.array,
 };

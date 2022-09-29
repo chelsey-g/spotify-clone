@@ -7,8 +7,6 @@ import { PropTypes } from "prop-types";
 import ArtistMediumCardCollection from "./ArtistMediumCardCollection";
 
 export default function ArtistsCollectionView(props) {
-  let { followedArtists } = props;
-
   return (
     <div className="library-view">
       <div className="library-view-header">
@@ -28,8 +26,8 @@ export default function ArtistsCollectionView(props) {
       </div>
     </div>
   );
-
-  ArtistsCollectionView.propTypes = {
-    followedArtists: PropTypes.array,
-  };
 }
+
+ArtistsCollectionView.propTypes = {
+  followedArtists: PropTypes.array,
+};
