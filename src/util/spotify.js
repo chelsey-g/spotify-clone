@@ -10,7 +10,6 @@ export function Login() {
   let scopes = [
     "user-top-read",
     "user-library-read",
-    "user-follow-read",
     "playlist-read-private",
     "user-modify-playback-state",
     "user-read-playback-state",
@@ -156,10 +155,6 @@ export function getCategoryPlaylists(id) {
   return request(
     `https://api.spotify.com/v1/browse/categories/${id}/playlists`
   );
-}
-
-export function getUserFollowedArtists() {
-  return request(`https://api.spotify.com/v1/me/following?type=artist`);
 }
 
 export async function startPlayback(uri, deviceId = null) {
