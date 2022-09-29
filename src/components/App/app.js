@@ -11,7 +11,7 @@ import SearchPage from "../../pages/SearchPage";
 import CategoriesPage from "../../pages/CategoriesPage";
 import PlaylistCollectionPage from "../../pages/PlaylistCollectionPage";
 import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
-import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
+// import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
 // import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
 
 function App() {
@@ -51,8 +51,8 @@ function App() {
           path="/collection/podcasts"
           element={<PodcastCollectionPage />}
         />
-        <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
-        {/* <Route path="/collection/albums" element={<AlbumCollectionPage />} /> */}
+        {/* <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
+        <Route path="/collection/albums" element={<AlbumCollectionPage />} /> */}
       </Routes>
     </div>
   );
