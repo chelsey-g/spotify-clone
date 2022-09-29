@@ -1,0 +1,54 @@
+.artists-medium-card {
+  width: 180px;
+  height: 260px;
+  background-color: #171717;
+  padding: 18px;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-highlighted {
+  border: 5px solid purple;
+}
+
+.artists-medium-card-header {
+  position: relative;
+}
+
+.artists-medium-card:hover .play-btn {
+  color: white;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artists-medium-card .play-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  margin: 5px;
+  transform: translateY(50%);
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.artists-cover-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+.artists-card-artist {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-top: 20px;
+}
+
+.artists-card-type {
+  padding-top: 20px;
+  padding-left: 5px;
+  color: grey;
+  font-size: 14px;
+}
