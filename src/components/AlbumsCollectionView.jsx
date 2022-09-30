@@ -4,8 +4,9 @@ import LibraryTabNav from "./LibraryTabNav";
 import LeftArrowButton from "./LeftArrowButton";
 import RightArrowButton from "./RightArrowButton";
 import { PropTypes } from "prop-types";
+import MediumCardCollection from "./MediumCardCollection";
 
-export default function AlbumCollectionView(props) {
+export default function AlbumsCollectionView(props) {
   return (
     <div className="library-view">
       <div className="library-view-header">
@@ -18,12 +19,10 @@ export default function AlbumCollectionView(props) {
         </div>
         <UserMenuButton />
       </div>
-      <div className="library-view-title-header">Artists</div>
-      <div className="playlist-view-content"></div>
+      <div className="library-view-title-header">Albums</div>
+      <div className="playlist-view-content">
+        <MediumCardCollection playlists={props.savedAlbums} />
+      </div>
     </div>
   );
 }
-
-ArtistsCollectionView.propTypes = {
-  followedArtists: PropTypes.array,
-};
