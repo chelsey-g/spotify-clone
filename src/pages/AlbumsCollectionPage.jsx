@@ -9,7 +9,7 @@ export default function AlbumsCollectionPage(props) {
   useEffect(() => {
     getSavedAlbums()
       .then((data) => {
-        setSavedAlbums(data.items.map((item) => item.album));
+        setSavedAlbums(data.artists.items);
       })
 
       .catch((err) => {
