@@ -12,7 +12,7 @@ import CategoriesPage from "../../pages/CategoriesPage";
 import PlaylistCollectionPage from "../../pages/PlaylistCollectionPage";
 import PodcastCollectionPage from "../../pages/PodcastCollectionPage";
 import ArtistsCollectionPage from "../../pages/ArtistsCollectionPage";
-// import AlbumCollectionPage from "../../pages/AlbumsCollectionPage";
+import AlbumsCollectionPage from "../../pages/AlbumsCollectionPage";
 
 function App() {
   let token = useSpotify();
@@ -52,7 +52,7 @@ function App() {
           element={<PodcastCollectionPage />}
         />
         <Route path="/collection/artists" element={<ArtistsCollectionPage />} />
-        {/* <Route path="/collection/albums" element={<AlbumCollectionPage />} /> */}
+        <Route path="/collection/albums" element={<AlbumsCollectionPage />} />
       </Routes>
     </div>
   );
