@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export default function LeftArrowButton(props) {
   const [leftArrowClass, setleftArrowClass] = useState("");
+  const navigate = useNavigate();
+
   const handleButtonClick = () => {
     if (leftArrowClass !== "") {
       setleftArrowClass("");
@@ -14,7 +17,7 @@ export default function LeftArrowButton(props) {
   return (
     <span
       className={`left-arrow-button ${leftArrowClass}`}
-      onClick={handleButtonClick}
+      onClick={() => navigate(-1)}
     >
       <IoIosArrowDropleftCircle color="#FFFFFF" size={37} />
     </span>

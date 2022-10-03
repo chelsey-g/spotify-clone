@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export default function RightArrowButton(props) {
   const [rightArrowClass, setrightArrowClass] = useState("");
+  const navigate = useNavigate();
+
   const handleButtonClick = () => {
     if (rightArrowClass !== "") {
       setrightArrowClass("");
@@ -14,7 +17,7 @@ export default function RightArrowButton(props) {
   return (
     <span
       className={`right-arrow-button ${rightArrowClass}`}
-      onClick={handleButtonClick}
+      onClick={() => navigate(1)}
     >
       <IoIosArrowDroprightCircle
         size={37}
