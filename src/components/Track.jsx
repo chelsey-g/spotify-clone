@@ -101,8 +101,3 @@ Track.propTypes = {
   date_added: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
 };
-
-// props.mode
-
-// mode == "album", not show artist, date added
-// mode == 'playlist', show artist, date added
